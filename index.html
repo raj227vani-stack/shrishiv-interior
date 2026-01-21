@@ -1,223 +1,532 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shrishiv Interior Designs</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #f8f9fa;
-      color: #333;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #d9d4c7, #f1eee6);
+      color: #2f2f2f;
     }
 
     header {
-      background: #0f172a;
-      color: white;
-      padding: 15px 25px;
+      background: rgba(240,236,226,0.95);
+      color: #2a2a2a;
+      padding: 20px 60px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #d6d2c8;
     }
 
-    .brand {
+    .logo-box {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
-    .logo {
-      height: 55px;
+    .logo-box img {
+      height: 52px;
     }
 
-    .brand h1 {
-      font-size: 22px;
-      margin: 0;
+    nav a {
+      color: #2f2f2f;
+      margin-left: 28px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.4px;
+    }
+
+    nav a:hover {
+      color: #b89b4c;
     }
 
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-                  url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c") center/cover no-repeat;
-      color: white;
+      background: url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(210,204,190,0.65);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 20px;
       text-align: center;
-      padding: 90px 20px;
     }
 
-    .hero h2 {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      opacity: 0.9;
+    .hero-content h2 {
+      font-size: 58px;
+      margin: 0;
+      letter-spacing: 1.5px;
+      color: #2a2a2a;
     }
 
     section {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
+      padding: 100px 50px;
+      max-width: 1250px;
+      margin: auto;
     }
 
-    section h2 {
+    h2 {
       text-align: center;
-      margin-bottom: 15px;
-      color: #0f172a;
+      margin-bottom: 70px;
+      font-size: 36px;
+      letter-spacing: 1.2px;
+      color: #2a2a2a;
     }
 
-    .about p {
-      text-align: center;
-      line-height: 1.7;
+    .about-box {
+      background: #f8f6f1;
+      border-radius: 26px;
+      padding: 70px;
+      max-width: 1050px;
+      margin: auto;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      line-height: 1.9;
+      font-size: 18px;
+      border: 1px solid #ded9c9;
     }
 
-    .services ul {
-      list-style: none;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      text-align: center;
+    .about-box p {
+      margin-bottom: 22px;
+      color: #4a4a4a;
     }
 
-    .services li {
-      background: white;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    .designer-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 18px;
+      line-height: 1.6;
     }
 
-    .projects .gallery {
+    .highlight-name {
+      color: #b89b4c;
+      font-weight: 900;
+      font-size: 22px;
+      letter-spacing: 1px;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .about-stats {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
+      gap: 26px;
+      margin-top: 40px;
+    }
+
+    .stat-box {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 30px;
+      text-align: center;
+      font-weight: 700;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      border: 1px solid #ded9c9;
+    }
+
+    .stat-box span {
+      display: block;
+      font-size: 32px;
+      color: #b89b4c;
+      margin-bottom: 10px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
 
     .projects img {
       width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
-
-    .contact form {
-      max-width: 500px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .contact input,
-    .contact textarea {
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-
-    .contact button {
-      background: #0f172a;
-      color: white;
-      border: none;
-      padding: 12px;
-      font-size: 16px;
-      border-radius: 6px;
+      border-radius: 20px;
       cursor: pointer;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
-    .qr-section {
+    .projects img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.28);
+    }
+
+    .contact {
+      background: linear-gradient(135deg, #1a1c1f, #23262b);
+      border-radius: 26px;
+      padding: 70px;
+      max-width: 1000px;
+      margin: auto;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+      border: 1px solid rgba(255,255,255,0.05);
+      color: #e6e6e6;
+    }
+
+    .contact p {
+      font-size: 17px;
+      margin-bottom: 14px;
+      color: #cccccc;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+      margin-bottom: 30px;
+    }
+
+    .map-box {
+      margin: 30px 0 45px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .map-box iframe {
+      width: 100%;
+      height: 340px;
+      border: 0;
+    }
+
+    .qr-box {
       text-align: center;
+      margin-top: 35px;
+    }
+
+    .qr-box img {
+      width: 180px;
+      border-radius: 16px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.9);
+    }
+
+    .qr-box p {
+      margin-top: 12px;
+      font-weight: 700;
+      color: #b89b4c;
+      letter-spacing: 0.5px;
+    }
+
+    form {
       margin-top: 30px;
     }
 
-    .qr-section img {
-      width: 160px;
-      margin-top: 10px;
-      border: 6px solid white;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
     }
 
-    footer {
-      background: #0f172a;
-      color: white;
+    form input,
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 18px 20px;
+      margin: 16px 0;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.15);
+      font-size: 16px;
+      outline: none;
+      background: rgba(255,255,255,0.08);
+      color: #f5f5f5;
+    }
+
+    form textarea {
+      resize: none;
+      min-height: 140px;
+    }
+
+    .upload-box {
+      display: none;
+      background: rgba(255,255,255,0.08);
+      padding: 24px;
+      border-radius: 18px;
+      margin-top: 12px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .upload-box label {
+      display: block;
+      margin-bottom: 12px;
+      font-weight: 700;
+      color: #b89b4c;
+    }
+
+    .upload-box input {
+      margin: 6px 0;
+      width: 100%;
+      background: #fff;
+      border-radius: 12px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      color: #000;
+    }
+
+    form button {
+      display: block;
+      margin: 40px auto 0;
+      background: linear-gradient(135deg, #b89b4c, #d7b86b);
+      color: #000;
+      padding: 18px 48px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 900;
+      font-size: 16px;
+      letter-spacing: 1px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.9);
+    }
+
+    #thankyou {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(240,236,226,0.96);
+      z-index: 5000;
+      color: #222;
       text-align: center;
-      padding: 18px;
-      margin-top: 50px;
+    }
+
+    #thankyou::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('logo.png') center/320px no-repeat;
+      opacity: 0.05;
+    }
+
+    #thankyou .box {
+      position: relative;
+      max-width: 650px;
+      margin: 10% auto;
+      background: #ffffff;
+      padding: 70px;
+      border-radius: 26px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+      border: 1px solid #ded9c9;
+    }
+
+    #thankyou h1 {
+      margin: 0 0 20px;
+      font-size: 32px;
+      letter-spacing: 1.5px;
+      color: #222;
+    }
+
+    #thankyou p {
+      font-size: 20px;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    #thankyou button {
+      background: linear-gradient(135deg, #b89b4c, #d7b86b);
+      color: #000;
+      padding: 18px 48px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 900;
+      font-size: 16px;
+      letter-spacing: 1px;
     }
   </style>
 </head>
-
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="brand">
-      <img src="logo.png" alt="Shrishiv Interior Designs" class="logo">
-      <h1>Shrishiv Interior Designs</h1>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <div class="hero">
-    <h2>Interior Design & 3D Visualization</h2>
-    <p>We design modern and beautiful living spaces</p>
+<header>
+  <div class="logo-box">
+    <img src="logo.png">
+    <h1>Shrishiv Interior Designs</h1>
   </div>
+</header>
 
-  <!-- ABOUT -->
-  <section class="about">
-    <h2>About Us</h2>
-    <p>
-      Shrishiv Interior Designs provides professional interior design
-      and 3D visualization services for residential and commercial spaces.
+<div class="hero">
+  <div class="hero-content">
+    <h2>Luxury Interior & 3D Visualization</h2>
+  </div>
+</div>
+
+<section id="about">
+  <h2>About Us</h2>
+  <div class="about-box">
+    <p>Shrishiv Interior Designs is a premium interior design firm with over <strong>5 years of industry experience</strong>, delivering modern, elegant, and highly functional interior solutions for residential and commercial spaces.</p>
+    <p>We have successfully completed <strong>50+ interior projects</strong> with a strong focus on quality craftsmanship, innovative concepts, and client satisfaction.</p>
+    <p>We proudly provide interior design services in <strong>Indore, Dewas, Surat</strong>, and across <strong>all over India</strong>.</p>
+
+    <p class="designer-line">
+      Managing Head & Main Interior Designer:
+      <span class="highlight-name">UMANG VANI</span>
     </p>
-  </section>
 
-  <!-- SERVICES -->
-  <section class="services">
-    <h2>Our Services</h2>
-    <ul>
-      <li>Residential Interior Design</li>
-      <li>Commercial Interior Design</li>
-      <li>3D Visualization</li>
-      <li>Modular Kitchen</li>
-    </ul>
-  </section>
-
-  <!-- PROJECTS -->
-  <section class="projects">
-    <h2>Our Projects</h2>
-    <div class="gallery">
-      <img src="project1.jpg" alt="Project 1">
-      <img src="project2.jpg" alt="Project 2">
-      <img src="project3.jpg" alt="Project 3">
-      <img src="project4.jpg" alt="Project 4">
+    <div class="about-stats">
+      <div class="stat-box"><span>5+</span>Years Experience</div>
+      <div class="stat-box"><span>50+</span>Projects Completed</div>
+      <div class="stat-box"><span>10+</span>Cities Served</div>
+      <div class="stat-box"><span>100%</span>Client Satisfaction</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section class="contact">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+<section id="projects">
+  <h2>Our Projects</h2>
+  <div class="projects">
+    <img src="project1.jpg">
+    <img src="project2.jpg">
+    <img src="project3.jpg">
+    <img src="project4.jpg">
+    <img src="project5.jpg">
+    <img src="project6.jpg">
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact">
+
+    <div class="info-grid">
+      <p><strong>Phone:</strong> 7415914573</p>
+      <p><strong>Email:</strong> shrishivdesigns@gmail.com</p>
+      <p><strong>City:</strong> Indore</p>
+    </div>
+
+    <div class="map-box">
+      <iframe src="https://maps.google.com/maps?q=Ranjeet%20Hanuman%20Indore&z=15&output=embed"></iframe>
+    </div>
+
+    <div class="qr-box">
+      <img src="QR.png" alt="Instagram QR Code">
+      <p>Follow us on Instagram</p>
+    </div>
+
+    <form onsubmit="sendToWhatsApp(); return false;">
+      <div class="form-row">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" />
+      </div>
+
+      <div class="form-row">
+        <input type="text" id="phone" placeholder="Your Phone" required />
+      </div>
+
+      <div class="form-row">
+        <select id="type" onchange="handleTypeChange()">
+          <option value="">Select Interior Type</option>
+          <option value="Home Interior">Home Interior</option>
+          <option value="Modular Kitchen">Modular Kitchen</option>
+          <option value="Bedroom Design">Bedroom Design</option>
+          <option value="Office Interior">Office Interior</option>
+          <option value="Full House Interior">Full House Interior</option>
+          <option value="3D Visualization">3D Visualization</option>
+        </select>
+      </div>
+
+      <div class="upload-box" id="homeUpload">
+        <label>Upload House Plan / Naksha (PDF or Image)</label>
+        <input type="file" id="homeFile" accept=".pdf,image/*">
+      </div>
+
+      <div class="upload-box" id="otherUpload">
+        <label>Upload Reference Photos (Max 20)</label>
+        <input type="file" id="otherFiles" multiple accept="image/*">
+      </div>
+
+      <textarea id="message" placeholder="Your Message"></textarea>
+
+      <button type="submit">Send Enquiry on WhatsApp</button>
     </form>
+  </div>
+</section>
 
-    <!-- QR CODE -->
-    <div class="qr-section">
-      <h3>Scan for Instagram</h3>
-      <img src="qr.png" alt="Instagram QR Code">
-    </div>
-  </section>
+<div id="thankyou">
+  <div class="box">
+    <h1>THANK YOU FOR CHOOSING<br>SHRISHIV INTERIOR DESIGNS</h1>
+    <p>Shrishiv Interior Designs will contact you soon.</p>
+    <button onclick="closeThankYou()">Back to Website</button>
+  </div>
+</div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Shrishiv Interior Designs. All rights reserved.</p>
-  </footer>
+<script>
+function handleTypeChange() {
+  var type = document.getElementById("type").value;
+  var homeUpload = document.getElementById("homeUpload");
+  var otherUpload = document.getElementById("otherUpload");
+
+  homeUpload.style.display = "none";
+  otherUpload.style.display = "none";
+
+  if (type === "Home Interior") {
+    homeUpload.style.display = "block";
+  } else if (type !== "") {
+    otherUpload.style.display = "block";
+  }
+}
+
+function sendToWhatsApp() {
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var phone = document.getElementById("phone").value;
+  var type = document.getElementById("type").value;
+  var message = document.getElementById("message").value;
+
+  var homeFile = document.getElementById("homeFile").files.length;
+  var otherFiles = document.getElementById("otherFiles").files.length;
+
+  if (otherFiles > 20) {
+    alert("You can upload maximum 20 photos only.");
+    return;
+  }
+
+  var fileInfo = "";
+  if (homeFile > 0) fileInfo = "House Plan Attached: Yes";
+  if (otherFiles > 0) fileInfo = "Reference Photos Attached: " + otherFiles;
+
+  var fullMessage =
+    "New Interior Enquiry%0A%0A" +
+    "Name: " + name + "%0A" +
+    "Email: " + email + "%0A" +
+    "Phone: " + phone + "%0A" +
+    "Interior Type: " + type + "%0A" +
+    fileInfo + "%0A" +
+    "Message: " + message;
+
+  window.open("https://wa.me/917415914573?text=" + fullMessage, "_blank");
+  document.getElementById("thankyou").style.display = "block";
+}
+
+function closeThankYou() {
+  document.getElementById("thankyou").style.display = "none";
+}
+</script>
 
 </body>
 </html>
+
