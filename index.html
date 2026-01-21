@@ -1,3 +1,8 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +14,13 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(135deg, #0e0f12, #1b1d22);
-      color: #e5e5e5;
+      background: linear-gradient(135deg, #d9d4c7, #f1eee6);
+      color: #2f2f2f;
     }
 
     header {
-      background: rgba(10,10,12,0.95);
-      color: #f5f5f5;
+      background: rgba(240,236,226,0.95);
+      color: #2a2a2a;
       padding: 20px 60px;
       display: flex;
       justify-content: space-between;
@@ -23,8 +28,8 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #d6d2c8;
     }
 
     .logo-box {
@@ -37,14 +42,38 @@
       height: 52px;
     }
 
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      color: #2f2f2f;
+      margin-left: 28px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.4px;
+    }
+
+    nav a:hover {
+      color: #b89b4c;
+    }
+
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat;
+      background: url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85') center/cover no-repeat;
       height: 90vh;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(210,204,190,0.65);
     }
 
     .hero-content {
@@ -59,7 +88,7 @@
       font-size: 58px;
       margin: 0;
       letter-spacing: 1.5px;
-      color: #f3f3f3;
+      color: #2a2a2a;
     }
 
     section {
@@ -73,24 +102,24 @@
       margin-bottom: 70px;
       font-size: 36px;
       letter-spacing: 1.2px;
-      color: #f3f3f3;
+      color: #2a2a2a;
     }
 
     .about-box {
-      background: #1c1e23;
+      background: #f8f6f1;
       border-radius: 26px;
       padding: 70px;
       max-width: 1050px;
       margin: auto;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
       line-height: 1.9;
       font-size: 18px;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid #ded9c9;
     }
 
     .about-box p {
       margin-bottom: 22px;
-      color: #d0d0d0;
+      color: #4a4a4a;
     }
 
     .designer-line {
@@ -103,7 +132,7 @@
     }
 
     .highlight-name {
-      color: #d6b56d;
+      color: #b89b4c;
       font-weight: 900;
       font-size: 22px;
       letter-spacing: 1px;
@@ -119,19 +148,19 @@
     }
 
     .stat-box {
-      background: #23252c;
+      background: #ffffff;
       border-radius: 18px;
       padding: 30px;
       text-align: center;
       font-weight: 700;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.7);
-      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      border: 1px solid #ded9c9;
     }
 
     .stat-box span {
       display: block;
       font-size: 32px;
-      color: #d6b56d;
+      color: #b89b4c;
       margin-bottom: 10px;
     }
 
@@ -145,23 +174,23 @@
       width: 100%;
       border-radius: 20px;
       cursor: pointer;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.9);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
     .projects img:hover {
       transform: scale(1.05);
-      box-shadow: 0 18px 45px rgba(0,0,0,1);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.28);
     }
 
     .contact {
-      background: linear-gradient(135deg, #0c0e12, #16181e);
+      background: linear-gradient(135deg, #1a1c1f, #23262b);
       border-radius: 26px;
       padding: 70px;
       max-width: 1000px;
       margin: auto;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.9);
-      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+      border: 1px solid rgba(255,255,255,0.05);
       color: #e6e6e6;
     }
 
@@ -182,7 +211,7 @@
       margin: 30px 0 45px;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.9);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
       border: 1px solid rgba(255,255,255,0.05);
     }
 
@@ -206,7 +235,7 @@
     .qr-box p {
       margin-top: 12px;
       font-weight: 700;
-      color: #d6b56d;
+      color: #b89b4c;
       letter-spacing: 0.5px;
     }
 
@@ -252,7 +281,7 @@
       display: block;
       margin-bottom: 12px;
       font-weight: 700;
-      color: #d6b56d;
+      color: #b89b4c;
     }
 
     .upload-box input {
@@ -268,7 +297,7 @@
     form button {
       display: block;
       margin: 40px auto 0;
-      background: linear-gradient(135deg, #d6b56d, #f0d58b);
+      background: linear-gradient(135deg, #b89b4c, #d7b86b);
       color: #000;
       padding: 18px 48px;
       border: none;
@@ -277,22 +306,22 @@
       font-weight: 900;
       font-size: 16px;
       letter-spacing: 1px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.8);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.7);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     form button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 18px 45px rgba(0,0,0,1);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.9);
     }
 
     #thankyou {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.92);
+      background: rgba(240,236,226,0.96);
       z-index: 5000;
-      color: #f5f5f5;
+      color: #222;
       text-align: center;
     }
 
@@ -301,35 +330,35 @@
       position: absolute;
       inset: 0;
       background: url('shrishiv-website/logo.png') center/320px no-repeat;
-      opacity: 0.04;
+      opacity: 0.05;
     }
 
     #thankyou .box {
       position: relative;
       max-width: 650px;
       margin: 10% auto;
-      background: #1c1e23;
+      background: #ffffff;
       padding: 70px;
       border-radius: 26px;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.9);
-      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+      border: 1px solid #ded9c9;
     }
 
     #thankyou h1 {
       margin: 0 0 20px;
       font-size: 32px;
       letter-spacing: 1.5px;
-      color: #f5f5f5;
+      color: #222;
     }
 
     #thankyou p {
       font-size: 20px;
-      color: #ccc;
+      color: #555;
       margin-bottom: 40px;
     }
 
     #thankyou button {
-      background: linear-gradient(135deg, #d6b56d, #f0d58b);
+      background: linear-gradient(135deg, #b89b4c, #d7b86b);
       color: #000;
       padding: 18px 48px;
       border: none;
@@ -348,6 +377,12 @@
     <img src="shrishiv-website/logo.png">
     <h1>Shrishiv Interior Designs</h1>
   </div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <div class="hero">
@@ -510,8 +545,4 @@ function closeThankYou() {
 
 </body>
 </html>
-
-
-
-
 
