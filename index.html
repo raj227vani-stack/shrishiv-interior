@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,101 +11,99 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      background: #f4f4f4;
       color: #333;
     }
 
     header {
       background: #fff;
-      padding: 15px 30px;
+      padding: 15px 20px;
       display: flex;
       align-items: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    header img.logo {
+    .logo {
       height: 60px;
       margin-right: 15px;
     }
 
     header h1 {
-      font-size: 24px;
+      font-size: 22px;
       margin: 0;
     }
 
     .hero {
-      background: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c") center/cover no-repeat;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      background: #222;
       color: white;
-      position: relative;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.4);
-    }
-
-    .hero h2 {
-      position: relative;
-      font-size: 48px;
-      z-index: 1;
+      padding: 60px 20px;
+      text-align: center;
     }
 
     section {
-      padding: 40px 20px;
-      max-width: 1100px;
+      padding: 30px 20px;
+      max-width: 900px;
       margin: auto;
+      background: white;
+      margin-top: 20px;
+      border-radius: 8px;
     }
 
-    .about, .services {
+    h2 {
       text-align: center;
     }
 
-    .services ul {
+    ul {
       list-style: none;
       padding: 0;
-    }
-
-    .services li {
-      padding: 10px 0;
-      font-size: 18px;
-    }
-
-    /* PROJECTS GALLERY */
-    #projects {
       text-align: center;
+    }
+
+    ul li {
+      padding: 8px 0;
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-top: 15px;
     }
 
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
+    .gallery div {
+      background: #ddd;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      border-radius: 6px;
     }
 
-    .gallery img:hover {
-      transform: scale(1.05);
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input, textarea, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      background: #222;
+      color: white;
+      border: none;
+      cursor: pointer;
     }
 
     footer {
       background: #222;
-      color: #fff;
+      color: white;
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      padding: 15px;
+      margin-top: 30px;
     }
   </style>
 </head>
@@ -118,45 +118,56 @@
 
   <!-- HERO -->
   <div class="hero">
-    <h2>Luxury Interior & 3D Visualization</h2>
+    <h2>Interior Design & 3D Visualization</h2>
+    <p>We design beautiful and functional spaces</p>
   </div>
 
   <!-- ABOUT -->
-  <section class="about">
+  <section>
     <h2>About Us</h2>
     <p>
-      Shrishiv Interior Designs specializes in modern, luxury interior solutions and
-      high-quality 3D visualization for residential and commercial spaces.
+      Shrishiv Interior Designs provides professional interior design
+      and 3D visualization services for homes and offices.
     </p>
   </section>
 
   <!-- SERVICES -->
-  <section class="services">
+  <section>
     <h2>Our Services</h2>
     <ul>
-      <li>🏠 Residential Interior Design</li>
-      <li>🏢 Commercial Interior Design</li>
-      <li>🖥️ 3D Visualization</li>
-      <li>🛋️ Modular Kitchen & Furniture</li>
+      <li>Residential Interior Design</li>
+      <li>Commercial Interior Design</li>
+      <li>3D Visualization</li>
+      <li>Modular Kitchen</li>
     </ul>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects">
+  <section>
     <h2>Our Projects</h2>
     <div class="gallery">
-      <img src="project1.jpg" alt="Project 1">
-      <img src="project2.jpg" alt="Project 2">
-      <img src="project3.jpg" alt="Project 3">
-      <img src="project4.jpg" alt="Project 4">
+      <div>Project 1</div>
+      <div>Project 2</div>
+      <div>Project 3</div>
+      <div>Project 4</div>
     </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 Shrishiv Interior Designs. All rights reserved.</p>
+    <p>© 2026 Shrishiv Interior Designs</p>
   </footer>
 
 </body>
 </html>
-
