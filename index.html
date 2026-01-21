@@ -9,13 +9,13 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(135deg, #0e0f12, #1b1d22);
-      color: #e5e5e5;
+      background: linear-gradient(135deg, #d9d4c7, #f1eee6);
+      color: #2f2f2f;
     }
 
     header {
-      background: rgba(10,10,12,0.95);
-      color: #f5f5f5;
+      background: rgba(240,236,226,0.95);
+      color: #2a2a2a;
       padding: 20px 60px;
       display: flex;
       justify-content: space-between;
@@ -23,8 +23,8 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #d6d2c8;
     }
 
     .logo-box {
@@ -37,14 +37,38 @@
       height: 52px;
     }
 
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      color: #2f2f2f;
+      margin-left: 28px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.4px;
+    }
+
+    nav a:hover {
+      color: #b89b4c;
+    }
+
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat;
+      background: url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85') center/cover no-repeat;
       height: 90vh;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(210,204,190,0.65);
     }
 
     .hero-content {
@@ -59,7 +83,7 @@
       font-size: 58px;
       margin: 0;
       letter-spacing: 1.5px;
-      color: #f3f3f3;
+      color: #2a2a2a;
     }
 
     section {
@@ -73,24 +97,24 @@
       margin-bottom: 70px;
       font-size: 36px;
       letter-spacing: 1.2px;
-      color: #f3f3f3;
+      color: #2a2a2a;
     }
 
     .about-box {
-      background: #1c1e23;
+      background: #f8f6f1;
       border-radius: 26px;
       padding: 70px;
       max-width: 1050px;
       margin: auto;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
       line-height: 1.9;
       font-size: 18px;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid #ded9c9;
     }
 
     .about-box p {
       margin-bottom: 22px;
-      color: #d0d0d0;
+      color: #4a4a4a;
     }
 
     .designer-line {
@@ -103,7 +127,7 @@
     }
 
     .highlight-name {
-      color: #d6b56d;
+      color: #b89b4c;
       font-weight: 900;
       font-size: 22px;
       letter-spacing: 1px;
@@ -119,19 +143,19 @@
     }
 
     .stat-box {
-      background: #23252c;
+      background: #ffffff;
       border-radius: 18px;
       padding: 30px;
       text-align: center;
       font-weight: 700;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.7);
-      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      border: 1px solid #ded9c9;
     }
 
     .stat-box span {
       display: block;
       font-size: 32px;
-      color: #d6b56d;
+      color: #b89b4c;
       margin-bottom: 10px;
     }
 
@@ -145,23 +169,23 @@
       width: 100%;
       border-radius: 20px;
       cursor: pointer;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.9);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
     .projects img:hover {
       transform: scale(1.05);
-      box-shadow: 0 18px 45px rgba(0,0,0,1);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.28);
     }
 
     .contact {
-      background: linear-gradient(135deg, #0c0e12, #16181e);
+      background: linear-gradient(135deg, #1a1c1f, #23262b);
       border-radius: 26px;
       padding: 70px;
       max-width: 1000px;
       margin: auto;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.9);
-      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+      border: 1px solid rgba(255,255,255,0.05);
       color: #e6e6e6;
     }
 
@@ -182,7 +206,7 @@
       margin: 30px 0 45px;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.9);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
       border: 1px solid rgba(255,255,255,0.05);
     }
 
@@ -206,138 +230,8 @@
     .qr-box p {
       margin-top: 12px;
       font-weight: 700;
-      color: #d6b56d;
+      color: #b89b4c;
       letter-spacing: 0.5px;
-    }
-
-    form {
-      margin-top: 30px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
-    form input,
-    form textarea,
-    form select {
-      width: 100%;
-      padding: 18px 20px;
-      margin: 16px 0;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.15);
-      font-size: 16px;
-      outline: none;
-      background: rgba(255,255,255,0.08);
-      color: #f5f5f5;
-    }
-
-    form textarea {
-      resize: none;
-      min-height: 140px;
-    }
-
-    .upload-box {
-      display: none;
-      background: rgba(255,255,255,0.08);
-      padding: 24px;
-      border-radius: 18px;
-      margin-top: 12px;
-      border: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .upload-box label {
-      display: block;
-      margin-bottom: 12px;
-      font-weight: 700;
-      color: #d6b56d;
-    }
-
-    .upload-box input {
-      margin: 6px 0;
-      width: 100%;
-      background: #fff;
-      border-radius: 12px;
-      padding: 12px;
-      border: 1px solid #ccc;
-      color: #000;
-    }
-
-    form button {
-      display: block;
-      margin: 40px auto 0;
-      background: linear-gradient(135deg, #d6b56d, #f0d58b);
-      color: #000;
-      padding: 18px 48px;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      font-weight: 900;
-      font-size: 16px;
-      letter-spacing: 1px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.8);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    form button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 45px rgba(0,0,0,1);
-    }
-
-    #thankyou {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.92);
-      z-index: 5000;
-      color: #f5f5f5;
-      text-align: center;
-    }
-
-    #thankyou::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url('shrishiv-website/logo.png') center/320px no-repeat;
-      opacity: 0.04;
-    }
-
-    #thankyou .box {
-      position: relative;
-      max-width: 650px;
-      margin: 10% auto;
-      background: #1c1e23;
-      padding: 70px;
-      border-radius: 26px;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.9);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    #thankyou h1 {
-      margin: 0 0 20px;
-      font-size: 32px;
-      letter-spacing: 1.5px;
-      color: #f5f5f5;
-    }
-
-    #thankyou p {
-      font-size: 20px;
-      color: #ccc;
-      margin-bottom: 40px;
-    }
-
-    #thankyou button {
-      background: linear-gradient(135deg, #d6b56d, #f0d58b);
-      color: #000;
-      padding: 18px 48px;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      font-weight: 900;
-      font-size: 16px;
-      letter-spacing: 1px;
     }
   </style>
 </head>
@@ -348,6 +242,12 @@
     <img src="shrishiv-website/logo.png">
     <h1>Shrishiv Interior Designs</h1>
   </div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <div class="hero">
@@ -367,13 +267,6 @@
       Managing Head & Main Interior Designer:
       <span class="highlight-name">UMANG VANI</span>
     </p>
-
-    <div class="about-stats">
-      <div class="stat-box"><span>5+</span>Years Experience</div>
-      <div class="stat-box"><span>50+</span>Projects Completed</div>
-      <div class="stat-box"><span>10+</span>Cities Served</div>
-      <div class="stat-box"><span>100%</span>Client Satisfaction</div>
-    </div>
   </div>
 </section>
 
@@ -408,108 +301,12 @@
       <p>Follow us on Instagram</p>
     </div>
 
-    <form onsubmit="sendToWhatsApp(); return false;">
-      <div class="form-row">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="email" id="email" placeholder="Your Email" />
-      </div>
-
-      <div class="form-row">
-        <input type="text" id="phone" placeholder="Your Phone" required />
-      </div>
-
-      <div class="form-row">
-        <select id="type" onchange="handleTypeChange()">
-          <option value="">Select Interior Type</option>
-          <option value="Home Interior">Home Interior</option>
-          <option value="Modular Kitchen">Modular Kitchen</option>
-          <option value="Bedroom Design">Bedroom Design</option>
-          <option value="Office Interior">Office Interior</option>
-          <option value="Full House Interior">Full House Interior</option>
-          <option value="3D Visualization">3D Visualization</option>
-        </select>
-      </div>
-
-      <div class="upload-box" id="homeUpload">
-        <label>Upload House Plan / Naksha (PDF or Image)</label>
-        <input type="file" id="homeFile" accept=".pdf,image/*">
-      </div>
-
-      <div class="upload-box" id="otherUpload">
-        <label>Upload Reference Photos (Max 20)</label>
-        <input type="file" id="otherFiles" multiple accept="image/*">
-      </div>
-
-      <textarea id="message" placeholder="Your Message"></textarea>
-
-      <button type="submit">Send Enquiry on WhatsApp</button>
-    </form>
   </div>
 </section>
 
-<div id="thankyou">
-  <div class="box">
-    <h1>THANK YOU FOR CHOOSING<br>SHRISHIV INTERIOR DESIGNS</h1>
-    <p>Shrishiv Interior Designs will contact you soon.</p>
-    <button onclick="closeThankYou()">Back to Website</button>
-  </div>
-</div>
-
-<script>
-function handleTypeChange() {
-  var type = document.getElementById("type").value;
-  var homeUpload = document.getElementById("homeUpload");
-  var otherUpload = document.getElementById("otherUpload");
-
-  homeUpload.style.display = "none";
-  otherUpload.style.display = "none";
-
-  if (type === "Home Interior") {
-    homeUpload.style.display = "block";
-  } else if (type !== "") {
-    otherUpload.style.display = "block";
-  }
-}
-
-function sendToWhatsApp() {
-  var name = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var phone = document.getElementById("phone").value;
-  var type = document.getElementById("type").value;
-  var message = document.getElementById("message").value;
-
-  var homeFile = document.getElementById("homeFile").files.length;
-  var otherFiles = document.getElementById("otherFiles").files.length;
-
-  if (otherFiles > 20) {
-    alert("You can upload maximum 20 photos only.");
-    return;
-  }
-
-  var fileInfo = "";
-  if (homeFile > 0) fileInfo = "House Plan Attached: Yes";
-  if (otherFiles > 0) fileInfo = "Reference Photos Attached: " + otherFiles;
-
-  var fullMessage =
-    "New Interior Enquiry%0A%0A" +
-    "Name: " + name + "%0A" +
-    "Email: " + email + "%0A" +
-    "Phone: " + phone + "%0A" +
-    "Interior Type: " + type + "%0A" +
-    fileInfo + "%0A" +
-    "Message: " + message;
-
-  window.open("https://wa.me/917415914573?text=" + fullMessage, "_blank");
-  document.getElementById("thankyou").style.display = "block";
-}
-
-function closeThankYou() {
-  document.getElementById("thankyou").style.display = "none";
-}
-</script>
-
 </body>
 </html>
+
 
 
 
