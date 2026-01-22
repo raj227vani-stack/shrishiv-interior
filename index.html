@@ -33,9 +33,7 @@
       gap: 14px;
     }
 
-    .logo-box img {
-      height: 52px;
-    }
+    .logo-box img { height: 52px; }
 
     .logo-box h1 {
       margin: 0;
@@ -53,24 +51,20 @@
       letter-spacing: 0.4px;
     }
 
-    nav a:hover {
-      color: #d6b56d;
-    }
+    nav a:hover { color: #d6b56d; }
 
     .hero {
       height: 90vh;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-        url("shrishiv-website/hero.jpg") center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80")
+        center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
     }
 
-    .hero-content {
-      max-width: 900px;
-      padding: 20px;
-    }
+    .hero-content { max-width: 900px; padding: 20px; }
 
     .hero-content h2 {
       font-size: 56px;
@@ -100,115 +94,13 @@
       box-shadow: 0 12px 30px rgba(0,0,0,0.8);
     }
 
-    section {
-      padding: 90px 40px;
-      text-align: center;
-    }
+    section { padding: 90px 40px; text-align: center; }
 
     section h2 {
       margin-bottom: 60px;
       font-size: 38px;
       letter-spacing: 1.6px;
       color: #f3f3f3;
-    }
-
-    .interior-slider-section {
-      background: #121318;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .slider-container {
-      max-width: 1000px;
-      margin: auto;
-      position: relative;
-      overflow: hidden;
-      border-radius: 22px;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.9);
-    }
-
-    .slider-track {
-      display: flex;
-      transition: transform 0.7s ease-in-out;
-    }
-
-    .slide {
-      min-width: 100%;
-      position: relative;
-    }
-
-    .slide img {
-      width: 100%;
-      height: 480px;
-      object-fit: cover;
-    }
-
-    .slide-content {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0, 0, 0, 0.65);
-      color: #fff;
-      padding: 28px;
-    }
-
-    .slide-content h3 {
-      margin: 0 0 10px;
-      font-size: 28px;
-      color: #f0d58b;
-    }
-
-    .slide-content p {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #ddd;
-    }
-
-    .slider-dots {
-      margin-top: 18px;
-    }
-
-    .dot {
-      height: 11px;
-      width: 11px;
-      margin: 0 6px;
-      background-color: #666;
-      border-radius: 50%;
-      display: inline-block;
-      cursor: pointer;
-    }
-
-    .dot.active {
-      background-color: #d6b56d;
-    }
-
-    .about-box {
-      background: #1c1e23;
-      border-radius: 26px;
-      padding: 70px;
-      max-width: 1050px;
-      margin: auto;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.9);
-      line-height: 1.9;
-      font-size: 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #d0d0d0;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .projects img {
-      width: 100%;
-      border-radius: 20px;
-      cursor: pointer;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.9);
     }
 
     .contact {
@@ -222,7 +114,7 @@
       color: #e6e6e6;
     }
 
-    form input, form textarea {
+    form input, form textarea, form select {
       width: 100%;
       padding: 16px;
       border-radius: 14px;
@@ -231,6 +123,20 @@
       color: #f5f5f5;
       margin-bottom: 20px;
       font-size: 15px;
+    }
+
+    .upload-box {
+      display: none;
+      margin-bottom: 20px;
+      border: 1px dashed rgba(255,255,255,0.2);
+      padding: 20px;
+      border-radius: 14px;
+      text-align: center;
+      color: #ccc;
+    }
+
+    .upload-box input {
+      margin-top: 10px;
     }
 
     form button {
@@ -281,98 +187,45 @@
 
 <header>
   <div class="logo-box">
-    <img src="shrishiv-website/logo.png" alt="Shrishiv Logo">
+    <img src="shrishiv-website/logo.png">
     <h1>Shrishiv Interior Designs</h1>
   </div>
   <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<div class="hero">
-  <div class="hero-content">
-    <h2>Luxury Interiors Crafted With Perfection</h2>
-    <p>
-      We design elegant, modern and functional interiors that reflect your lifestyle.
-      From full home makeovers to modular kitchens and custom furniture — we do it all.
-    </p>
-    <button onclick="document.getElementById('contact').scrollIntoView()">Enquire Now</button>
-  </div>
-</div>
-
-<section class="interior-slider-section">
-  <h2>Discover The World Of Interior Solutions</h2>
-
-  <div class="slider-container">
-    <div class="slider-track">
-
-      <div class="slide">
-        <img src="shrishiv-website/slide1.jpg">
-        <div class="slide-content">
-          <h3>Full Home Interiors</h3>
-          <p>Premium end-to-end home interior solutions with flawless execution.</p>
-        </div>
-      </div>
-
-      <div class="slide">
-        <img src="shrishiv-website/slide2.jpg">
-        <div class="slide-content">
-          <h3>Modular Kitchen</h3>
-          <p>Smart, stylish and space-efficient modular kitchen designs.</p>
-        </div>
-      </div>
-
-      <div class="slide">
-        <img src="shrishiv-website/slide3.jpg">
-        <div class="slide-content">
-          <h3>Custom Furniture</h3>
-          <p>Tailor-made furniture that blends comfort, durability and elegance.</p>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="slider-dots">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-  </div>
-</section>
-
-<section id="about">
-  <h2>About Us</h2>
-  <div class="about-box">
-    Shrishiv Interior Designs is a premium interior design studio delivering modern,
-    elegant and functional spaces. With a strong focus on quality, innovation and client
-    satisfaction, we transform homes into masterpieces.
-  </div>
-</section>
-
-<section id="projects">
-  <h2>Our Projects</h2>
-  <div class="projects">
-    <img src="shrishiv-website/project1.jpg">
-    <img src="shrishiv-website/project2.jpg">
-    <img src="shrishiv-website/project3.jpg">
-  </div>
-</section>
-
 <section id="contact">
   <h2>Enquiry Form</h2>
   <div class="contact">
-    <form>
+    <form id="enquiryForm">
+
       <input type="text" placeholder="Your Name" required>
       <input type="email" placeholder="Your Email" required>
       <input type="tel" placeholder="Your Phone" required>
+
+      <!-- INTERIOR TYPE -->
+      <select id="interiorType" required>
+        <option value="">Select Interior Type</option>
+        <option value="home">Home Interior</option>
+        <option value="kitchen">Modular Kitchen</option>
+        <option value="furniture">Custom Furniture</option>
+      </select>
+
+      <!-- HOUSE PLAN UPLOAD -->
+      <div class="upload-box" id="uploadBox">
+        <p>Upload House Plan (PDF or Image)</p>
+        <input type="file" id="housePlan"
+               accept=".pdf,image/*">
+      </div>
+
       <textarea rows="5" placeholder="Your Message"></textarea>
+
       <button type="submit">Send Enquiry</button>
     </form>
 
     <div class="qr-box">
-      <img src="shrishiv-website/insta-qr.png" alt="Instagram QR">
+      <img src="shrishiv-website/insta-qr.png">
       <p>Scan to visit our Instagram</p>
     </div>
   </div>
@@ -383,38 +236,27 @@
 </footer>
 
 <script>
-  let currentSlide = 0;
-  const slides = document.querySelectorAll(".slide");
-  const dots = document.querySelectorAll(".dot");
-  const sliderTrack = document.querySelector(".slider-track");
+  const interiorType = document.getElementById("interiorType");
+  const uploadBox = document.getElementById("uploadBox");
 
-  function showSlide(index) {
-    if (index >= slides.length) currentSlide = 0;
-    if (index < 0) currentSlide = slides.length - 1;
-
-    sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-    dots.forEach(dot => dot.classList.remove("active"));
-    dots[currentSlide].classList.add("active");
-  }
-
-  function nextSlide() {
-    currentSlide++;
-    showSlide(currentSlide);
-  }
-
-  dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-      currentSlide = index;
-      showSlide(currentSlide);
-    });
+  interiorType.addEventListener("change", function () {
+    if (this.value === "home") {
+      uploadBox.style.display = "block";
+    } else {
+      uploadBox.style.display = "none";
+      document.getElementById("housePlan").value = "";
+    }
   });
 
-  setInterval(nextSlide, 4000);
+  document.getElementById("enquiryForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Enquiry submitted successfully! (Backend connect pending)");
+  });
 </script>
 
 </body>
 </html>
+
 
 
 
