@@ -27,14 +27,6 @@
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    .logo-box {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .logo-box img { height: 52px; }
-
     .logo-box h1 {
       margin: 0;
       font-size: 22px;
@@ -51,7 +43,9 @@
       letter-spacing: 0.4px;
     }
 
-    nav a:hover { color: #d6b56d; }
+    nav a:hover {
+      color: #d6b56d;
+    }
 
     .hero {
       height: 90vh;
@@ -64,10 +58,13 @@
       text-align: center;
     }
 
-    .hero-content { max-width: 900px; padding: 20px; }
+    .hero-content {
+      max-width: 900px;
+      padding: 20px;
+    }
 
     .hero-content h2 {
-      font-size: 56px;
+      font-size: 58px;
       margin: 0;
       letter-spacing: 2px;
       color: #f5f5f5;
@@ -94,13 +91,61 @@
       box-shadow: 0 12px 30px rgba(0,0,0,0.8);
     }
 
-    section { padding: 90px 40px; text-align: center; }
+    section {
+      padding: 90px 40px;
+      text-align: center;
+    }
 
     section h2 {
-      margin-bottom: 60px;
+      margin-bottom: 50px;
       font-size: 38px;
       letter-spacing: 1.6px;
       color: #f3f3f3;
+    }
+
+    .about-box {
+      background: #1c1e23;
+      border-radius: 26px;
+      padding: 70px;
+      max-width: 1050px;
+      margin: auto;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.9);
+      line-height: 1.9;
+      font-size: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #d0d0d0;
+      text-align: left;
+    }
+
+    .highlight-name {
+      color: #d6b56d;
+      font-weight: 900;
+      font-size: 22px;
+      margin-top: 30px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .projects img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.9);
+      transition: transform 0.4s ease;
+      cursor: pointer;
+    }
+
+    .projects img:hover {
+      transform: scale(1.05);
     }
 
     .contact {
@@ -125,20 +170,6 @@
       font-size: 15px;
     }
 
-    .upload-box {
-      display: none;
-      margin-bottom: 20px;
-      border: 1px dashed rgba(255,255,255,0.2);
-      padding: 20px;
-      border-radius: 14px;
-      text-align: center;
-      color: #ccc;
-    }
-
-    .upload-box input {
-      margin-top: 10px;
-    }
-
     form button {
       display: block;
       margin: 30px auto 0;
@@ -154,24 +185,6 @@
       cursor: pointer;
     }
 
-    .qr-box {
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .qr-box img {
-      width: 180px;
-      border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.9);
-    }
-
-    .qr-box p {
-      margin-top: 12px;
-      font-weight: 700;
-      color: #d6b56d;
-      letter-spacing: 0.5px;
-    }
-
     footer {
       background: #0a0b0f;
       padding: 20px;
@@ -180,6 +193,52 @@
       color: #aaa;
       border-top: 1px solid rgba(255,255,255,0.05);
     }
+
+    /* THANK YOU PAGE */
+    #thankyou {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 5000;
+      color: #f5f5f5;
+      text-align: center;
+    }
+
+    #thankyou .box {
+      position: relative;
+      max-width: 650px;
+      margin: 10% auto;
+      background: #1c1e23;
+      padding: 70px;
+      border-radius: 26px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.9);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    #thankyou h1 {
+      margin: 0 0 20px;
+      font-size: 32px;
+      letter-spacing: 1.5px;
+      color: #d6b56d;
+    }
+
+    #thankyou p {
+      font-size: 20px;
+      color: #ccc;
+      margin-bottom: 40px;
+    }
+
+    #thankyou button {
+      background: linear-gradient(135deg, #d6b56d, #f0d58b);
+      color: #000;
+      padding: 16px 42px;
+      border: none;
+      border-radius: 30px;
+      font-weight: 800;
+      font-size: 15px;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -187,47 +246,76 @@
 
 <header>
   <div class="logo-box">
-    <img src="shrishiv-website/logo.png">
     <h1>Shrishiv Interior Designs</h1>
   </div>
   <nav>
-    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="#projects">Our Projects</a>
+    <a href="#contact">Enquiry</a>
   </nav>
 </header>
+
+<div class="hero">
+  <div class="hero-content">
+    <h2>Luxury Interiors Crafted With Perfection</h2>
+    <p>
+      We design elegant, modern and functional interiors that reflect your lifestyle.  
+      Trusted by clients across India for premium interior solutions.
+    </p>
+    <button onclick="document.getElementById('contact').scrollIntoView()">Enquire Now</button>
+  </div>
+</div>
+
+<section id="about">
+  <h2>About Us</h2>
+  <div class="about-box">
+    <p>Shrishiv Interior Designs is a professionally managed interior design firm with more than five years of experience in delivering high-quality interior solutions.</p>
+    <p>Over the years, we have successfully served clients in more than ten cities, building a strong reputation for quality, reliability, and innovative design.</p>
+    <p>Our services are available all across India, allowing us to cater to residential and commercial projects of every scale.</p>
+    <p>Interior design is not just about decoration; it is about creating spaces that are functional, comfortable, and visually inspiring.</p>
+    <p>A well-designed interior enhances productivity, improves lifestyle quality, and adds long-term value to your property.</p>
+    <p>At Shrishiv Interior Designs, we focus on understanding your needs, preferences, and budget before creating customized design solutions.</p>
+    <p>We believe that every space should reflect the personality and lifestyle of its owner while maintaining a balance between elegance and practicality.</p>
+    <p>From concept planning to final execution, our team ensures a smooth, transparent, and stress-free experience for our clients.</p>
+
+    <div class="highlight-name">
+      MANAGING HEAD AND MAIN INTERIOR DESIGNER – UMANG VANI
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Our Projects</h2>
+  <div class="projects">
+    <img src="https://picsum.photos/400/300?random=1">
+    <img src="https://picsum.photos/400/300?random=2">
+    <img src="https://picsum.photos/400/300?random=3">
+    <img src="https://picsum.photos/400/300?random=4">
+    <img src="https://picsum.photos/400/300?random=5">
+    <img src="https://picsum.photos/400/300?random=6">
+    <img src="https://picsum.photos/400/300?random=7">
+    <img src="https://picsum.photos/400/300?random=8">
+  </div>
+</section>
 
 <section id="contact">
   <h2>Enquiry Form</h2>
   <div class="contact">
     <form id="enquiryForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
 
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <input type="tel" placeholder="Your Phone" required>
-
-      <!-- INTERIOR TYPE -->
       <select id="interiorType" required>
         <option value="">Select Interior Type</option>
-        <option value="home">Home Interior</option>
-        <option value="kitchen">Modular Kitchen</option>
-        <option value="furniture">Custom Furniture</option>
+        <option value="Home Interior">Home Interior</option>
+        <option value="Modular Kitchen">Modular Kitchen</option>
+        <option value="Custom Furniture">Custom Furniture</option>
       </select>
 
-      <!-- HOUSE PLAN UPLOAD -->
-      <div class="upload-box" id="uploadBox">
-        <p>Upload House Plan (PDF or Image)</p>
-        <input type="file" id="housePlan"
-               accept=".pdf,image/*">
-      </div>
-
-      <textarea rows="5" placeholder="Your Message"></textarea>
+      <textarea id="description" rows="5" placeholder="Describe your requirements" required></textarea>
 
       <button type="submit">Send Enquiry</button>
     </form>
-
-    <div class="qr-box">
-      <img src="shrishiv-website/insta-qr.png">
-      <p>Scan to visit our Instagram</p>
-    </div>
   </div>
 </section>
 
@@ -235,30 +323,48 @@
   © 2026 Shrishiv Interior Designs. All rights reserved.
 </footer>
 
+<!-- THANK YOU PAGE -->
+<div id="thankyou">
+  <div class="box">
+    <h1>THANK YOU FOR CHOOSING<br>SHRISHIV INTERIOR DESIGNS</h1>
+    <p>SHRISHIV INTERIOR DESIGNERS WILL CONTACT YOU SOON</p>
+    <button onclick="closeThankYou()">Back to Website</button>
+  </div>
+</div>
+
 <script>
-  const interiorType = document.getElementById("interiorType");
-  const uploadBox = document.getElementById("uploadBox");
+  const form = document.getElementById("enquiryForm");
+  const thankyou = document.getElementById("thankyou");
 
-  interiorType.addEventListener("change", function () {
-    if (this.value === "home") {
-      uploadBox.style.display = "block";
-    } else {
-      uploadBox.style.display = "none";
-      document.getElementById("housePlan").value = "";
-    }
-  });
-
-  document.getElementById("enquiryForm").addEventListener("submit", function(e) {
+  form.addEventListener("submit", function(e) {
     e.preventDefault();
-    alert("Enquiry submitted successfully! (Backend connect pending)");
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const interiorType = document.getElementById("interiorType").value;
+    const description = document.getElementById("description").value;
+
+    const message = 
+      "New Enquiry from Shrishiv Website%0A%0A" +
+      "Name: " + name + "%0A" +
+      "Email: " + email + "%0A" +
+      "Interior Type: " + interiorType + "%0A" +
+      "Requirements: " + description;
+
+    const phone = "7415914573";
+    const whatsappURL = "https://wa.me/" + phone + "?text=" + message;
+
+    window.open(whatsappURL, "_blank");
+
+    thankyou.style.display = "block";
+    form.reset();
   });
+
+  function closeThankYou() {
+    thankyou.style.display = "none";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
