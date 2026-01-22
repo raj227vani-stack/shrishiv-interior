@@ -27,6 +27,14 @@
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-box img { height: 52px; }
+
     .logo-box h1 {
       margin: 0;
       font-size: 22px;
@@ -43,9 +51,7 @@
       letter-spacing: 0.4px;
     }
 
-    nav a:hover {
-      color: #d6b56d;
-    }
+    nav a:hover { color: #d6b56d; }
 
     .hero {
       height: 90vh;
@@ -56,11 +62,6 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-    }
-
-    .hero-content {
-      max-width: 900px;
-      padding: 20px;
     }
 
     .hero-content h2 {
@@ -77,20 +78,6 @@
       color: #d0d0d0;
     }
 
-    .hero-content button {
-      margin-top: 40px;
-      background: linear-gradient(135deg, #d6b56d, #f0d58b);
-      color: #000;
-      border: none;
-      padding: 18px 48px;
-      border-radius: 30px;
-      font-weight: 800;
-      font-size: 16px;
-      cursor: pointer;
-      letter-spacing: 1px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.8);
-    }
-
     section {
       padding: 90px 40px;
       text-align: center;
@@ -101,6 +88,32 @@
       font-size: 38px;
       letter-spacing: 1.6px;
       color: #f3f3f3;
+    }
+
+    .stats-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 40px auto;
+    }
+
+    .stat-card {
+      background: #1c1e23;
+      padding: 25px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.9);
+      font-size: 18px;
+      font-weight: 700;
+      color: #f5f5f5;
+    }
+
+    .stat-card span {
+      display: block;
+      font-size: 30px;
+      color: #d6b56d;
+      margin-bottom: 10px;
     }
 
     .about-box {
@@ -140,12 +153,6 @@
       object-fit: cover;
       border-radius: 20px;
       box-shadow: 0 12px 28px rgba(0,0,0,0.9);
-      transition: transform 0.4s ease;
-      cursor: pointer;
-    }
-
-    .projects img:hover {
-      transform: scale(1.05);
     }
 
     .contact {
@@ -185,6 +192,17 @@
       cursor: pointer;
     }
 
+    .qr-box {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .qr-box img {
+      width: 180px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.9);
+    }
+
     footer {
       background: #0a0b0f;
       padding: 20px;
@@ -194,7 +212,6 @@
       border-top: 1px solid rgba(255,255,255,0.05);
     }
 
-    /* THANK YOU PAGE */
     #thankyou {
       display: none;
       position: fixed;
@@ -206,7 +223,6 @@
     }
 
     #thankyou .box {
-      position: relative;
       max-width: 650px;
       margin: 10% auto;
       background: #1c1e23;
@@ -217,9 +233,7 @@
     }
 
     #thankyou h1 {
-      margin: 0 0 20px;
       font-size: 32px;
-      letter-spacing: 1.5px;
       color: #d6b56d;
     }
 
@@ -228,17 +242,6 @@
       color: #ccc;
       margin-bottom: 40px;
     }
-
-    #thankyou button {
-      background: linear-gradient(135deg, #d6b56d, #f0d58b);
-      color: #000;
-      padding: 16px 42px;
-      border: none;
-      border-radius: 30px;
-      font-weight: 800;
-      font-size: 15px;
-      cursor: pointer;
-    }
   </style>
 </head>
 
@@ -246,6 +249,7 @@
 
 <header>
   <div class="logo-box">
+    <img src="logo.png" alt="Logo">
     <h1>Shrishiv Interior Designs</h1>
   </div>
   <nav>
@@ -258,16 +262,19 @@
 <div class="hero">
   <div class="hero-content">
     <h2>Luxury Interiors Crafted With Perfection</h2>
-    <p>
-      We design elegant, modern and functional interiors that reflect your lifestyle.  
-      Trusted by clients across India for premium interior solutions.
-    </p>
-    <button onclick="document.getElementById('contact').scrollIntoView()">Enquire Now</button>
+    <p>We design elegant, modern and functional interiors that reflect your lifestyle.</p>
   </div>
 </div>
 
 <section id="about">
   <h2>About Us</h2>
+
+  <div class="stats-box">
+    <div class="stat-card"><span>5+</span> Years Experience</div>
+    <div class="stat-card"><span>10+</span> Cities Served</div>
+    <div class="stat-card"><span>All India</span> Service Coverage</div>
+  </div>
+
   <div class="about-box">
     <p>Shrishiv Interior Designs is a professionally managed interior design firm with more than five years of experience in delivering high-quality interior solutions.</p>
     <p>Over the years, we have successfully served clients in more than ten cities, building a strong reputation for quality, reliability, and innovative design.</p>
@@ -307,15 +314,29 @@
 
       <select id="interiorType" required>
         <option value="">Select Interior Type</option>
-        <option value="Home Interior">Home Interior</option>
+        <option value="Full Home Interior">Full Home Interior</option>
+        <option value="Bedroom Design">Bedroom Design</option>
+        <option value="Living Room Design">Living Room Design</option>
         <option value="Modular Kitchen">Modular Kitchen</option>
+        <option value="Wardrobe Design">Wardrobe Design</option>
+        <option value="False Ceiling Design">False Ceiling Design</option>
+        <option value="Office Interior">Office Interior</option>
+        <option value="Commercial Interior">Commercial Interior</option>
+        <option value="3D Visualisation">3D Visualisation</option>
+        <option value="Exterior Design">Exterior Design</option>
         <option value="Custom Furniture">Custom Furniture</option>
+        <option value="Renovation">Renovation</option>
       </select>
 
       <textarea id="description" rows="5" placeholder="Describe your requirements" required></textarea>
 
       <button type="submit">Send Enquiry</button>
     </form>
+
+    <div class="qr-box">
+      <img src="QR.png" alt="Instagram QR">
+      <p>Scan to visit our Instagram</p>
+    </div>
   </div>
 </section>
 
@@ -323,12 +344,10 @@
   © 2026 Shrishiv Interior Designs. All rights reserved.
 </footer>
 
-<!-- THANK YOU PAGE -->
 <div id="thankyou">
   <div class="box">
     <h1>THANK YOU FOR CHOOSING<br>SHRISHIV INTERIOR DESIGNS</h1>
     <p>SHRISHIV INTERIOR DESIGNERS WILL CONTACT YOU SOON</p>
-    <button onclick="closeThankYou()">Back to Website</button>
   </div>
 </div>
 
@@ -344,7 +363,7 @@
     const interiorType = document.getElementById("interiorType").value;
     const description = document.getElementById("description").value;
 
-    const message = 
+    const message =
       "New Enquiry from Shrishiv Website%0A%0A" +
       "Name: " + name + "%0A" +
       "Email: " + email + "%0A" +
@@ -355,16 +374,11 @@
     const whatsappURL = "https://wa.me/" + phone + "?text=" + message;
 
     window.open(whatsappURL, "_blank");
-
     thankyou.style.display = "block";
     form.reset();
   });
-
-  function closeThankYou() {
-    thankyou.style.display = "none";
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
 </script>
 
 </body>
 </html>
+
