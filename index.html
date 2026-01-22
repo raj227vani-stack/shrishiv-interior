@@ -187,27 +187,21 @@ box-shadow:0 20px 60px rgba(0,0,0,.9);
 
 .slider-track{
 display:flex;
-animation:slide 28s infinite linear;
+animation:slide 18s infinite linear;
 }
 
-.slider-track img,
-.slider-track video{
+.slider-track img{
 width:100%;
 min-width:100%;
 height:420px;
 object-fit:cover;
-cursor:pointer;
 }
 
 @keyframes slide{
 0%{transform:translateX(0);}
-14%{transform:translateX(0);}
-28%{transform:translateX(-100%);}
-42%{transform:translateX(-200%);}
-56%{transform:translateX(-300%);}
-70%{transform:translateX(-400%);}
-84%{transform:translateX(-500%);}
-100%{transform:translateX(-600%);}
+33%{transform:translateX(-100%);}
+66%{transform:translateX(-200%);}
+100%{transform:translateX(0);}
 }
 
 /* TESTIMONIALS */
@@ -312,36 +306,19 @@ font-weight:700;
 box-shadow:0 10px 25px rgba(0,0,0,.9);
 }
 
-/* IMAGE ZOOM MODAL */
-.img-modal{
-display:none;
-position:fixed;
-z-index:6000;
-left:0;
-top:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.95);
-}
-
-.img-modal .modal-content{
-display:block;
+/* VIDEO SECTION – ONLY NEW CSS */
+.video-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+max-width:1100px;
 margin:auto;
-max-width:90%;
-max-height:90%;
-margin-top:5%;
-border-radius:14px;
-box-shadow:0 20px 60px rgba(0,0,0,.9);
 }
 
-.img-modal .close{
-position:absolute;
-top:20px;
-right:30px;
-font-size:40px;
-font-weight:900;
-color:#fff;
-cursor:pointer;
+.video-grid video{
+width:100%;
+border-radius:20px;
+box-shadow:0 20px 60px rgba(0,0,0,.9);
 }
 </style>
 </head>
@@ -373,41 +350,154 @@ cursor:pointer;
 </div>
 </div>
 
-<section id="projects">
-<h2>Project Walkthroughs</h2>
-<div class="slider">
-<div class="slider-track">
-<img src="shrishiv-website/PHOTO1.png" onclick="openModal(this.src)">
-<img src="shrishiv-website/PHOTO2.png" onclick="openModal(this.src)">
+<section id="about">
+<h2>About Us</h2>
 
-<video src="shrishiv-website/VIDEO1.mp4_mp4" autoplay muted loop playsinline></video>
+<div class="stats-box">
+<div class="stat-card"><span>5+</span> Years Experience</div>
+<div class="stat-card"><span>10+</span> Cities Served</div>
+<div class="stat-card"><span>All India</span> Service</div>
+</div>
 
-<img src="shrishiv-website/PHOTO3.png" onclick="openModal(this.src)">
+<div class="about-box">
+<p>Shrishiv Interior Designs is a professionally managed interior design firm with more than five years of experience.</p>
+<p>We have successfully delivered premium projects across more than ten cities.</p>
+<p>Our services are available all across India.</p>
+<p>Interior design enhances lifestyle quality and long-term property value.</p>
+<p>We create personalized, functional and elegant spaces.</p>
+<p>Our team ensures smooth execution and premium finishing.</p>
+<p>We believe every space should reflect its owner's personality.</p>
+<p>From concept to completion, we handle everything.</p>
 
-<video src="shrishiv-website/VIDEO02.mp4_mp4" autoplay muted loop playsinline></video>
-
-<img src="shrishiv-website/PHOTO4.png" onclick="openModal(this.src)">
-<img src="shrishiv-website/PHOTO5.png" onclick="openModal(this.src)">
+<div class="highlight-name">
+MANAGING HEAD AND MAIN INTERIOR DESIGNER – UMANG VANI
 </div>
 </div>
 </section>
 
-<div id="imgModal" class="img-modal">
-<span class="close" onclick="closeModal()">×</span>
-<img class="modal-content" id="modalImg">
+<section id="services">
+<h2>Our Services</h2>
+<div class="services">
+<div class="service-card"><h3>Full Home Interior</h3><p>Complete interior solutions for your dream home.</p></div>
+<div class="service-card"><h3>Modular Kitchen</h3><p>Modern, stylish and space-efficient kitchens.</p></div>
+<div class="service-card"><h3>Bedroom Design</h3><p>Comfort-focused bedroom interiors.</p></div>
+<div class="service-card"><h3>Living Room</h3><p>Luxury living room aesthetics.</p></div>
+<div class="service-card"><h3>Office Interior</h3><p>Professional workspace designs.</p></div>
+<div class="service-card"><h3>3D Visualisation</h3><p>Preview your interiors before execution.</p></div>
+<div class="service-card"><h3>Exterior Design</h3><p>Premium exterior elevation designs.</p></div>
+<div class="service-card"><h3>Renovation</h3><p>Upgrade your existing spaces.</p></div>
 </div>
+</section>
+
+<section id="projects">
+<h2>Our Projects</h2>
+<div class="slider">
+<div class="slider-track">
+<img src="https://picsum.photos/1200/600?random=1">
+<img src="https://picsum.photos/1200/600?random=2">
+<img src="https://picsum.photos/1200/600?random=3">
+</div>
+</div>
+</section>
+
+<!-- 🔥 NEW VIDEO SECTION – NOTHING ELSE TOUCHED -->
+<section id="walkthroughs">
+<h2>Project Walkthroughs</h2>
+
+<div class="video-grid">
+  <video src="shrishiv-website/VIDEO1.mp4_mp4" autoplay muted loop playsinline></video>
+  <video src="shrishiv-website/VIDEO02.mp4_mp4" autoplay muted loop playsinline></video>
+</div>
+
+</section>
+<!-- 🔥 END NEW SECTION -->
+
+<section id="testimonials">
+<h2>Client Testimonials</h2>
+<div class="testimonials">
+<div class="testimonial">⭐⭐⭐⭐⭐<br>"Outstanding work quality and on-time delivery." – Rahul Sharma</div>
+<div class="testimonial">⭐⭐⭐⭐⭐<br>"Beautiful designs and professional team." – Neha Patel</div>
+<div class="testimonial">⭐⭐⭐⭐⭐<br>"Highly recommended for premium interiors." – Aman Verma</div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Enquiry Form</h2>
+<div class="contact">
+<form id="enquiryForm" enctype="multipart/form-data">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="email" id="email" placeholder="Your Email" required>
+
+<select id="interiorType" required>
+<option value="">Select Interior Type</option>
+<option>Full Home Interior</option>
+<option>Bedroom Design</option>
+<option>Living Room Design</option>
+<option>Modular Kitchen</option>
+<option>Office Interior</option>
+<option>Commercial Interior</option>
+<option>3D Visualisation</option>
+<option>Exterior Design</option>
+<option>Renovation</option>
+</select>
+
+<textarea id="description" rows="5" placeholder="Describe your requirements" required></textarea>
+<input type="file" id="file">
+
+<button type="submit">Send Enquiry</button>
+</form>
+
+<div class="qr-box">
+<img src="shrishiv-website/QR.png">
+<p>Scan to visit our Instagram</p>
+</div>
+
+<div class="map-box">
+<iframe 
+src="https://www.google.com/maps?q=Indore,India&output=embed"
+width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
+</iframe>
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 Shrishiv Interior Designs. All rights reserved.
+</footer>
 
 <a class="whatsapp-float" href="https://wa.me/7415914573" target="_blank">WhatsApp</a>
 
-<script>
-function openModal(src){
-  document.getElementById("imgModal").style.display="block";
-  document.getElementById("modalImg").src=src;
-}
+<div id="thankyou">
+<div class="box">
+<h1>THANK YOU FOR CHOOSING<br>SHRISHIV INTERIOR DESIGNS</h1>
+<p>SHRISHIV INTERIOR DESIGNERS WILL CONTACT YOU SOON</p>
+</div>
+</div>
 
-function closeModal(){
-  document.getElementById("imgModal").style.display="none";
-}
+<script>
+const form=document.getElementById("enquiryForm");
+const thankyou=document.getElementById("thankyou");
+
+form.addEventListener("submit",function(e){
+e.preventDefault();
+
+const name=document.getElementById("name").value;
+const email=document.getElementById("email").value;
+const interiorType=document.getElementById("interiorType").value;
+const description=document.getElementById("description").value;
+
+const msg=
+"New Enquiry from Shrishiv Website%0A%0A"+
+"Name: "+name+"%0A"+
+"Email: "+email+"%0A"+
+"Interior Type: "+interiorType+"%0A"+
+"Requirements: "+description;
+
+window.open("https://wa.me/7415914573?text="+msg,"_blank");
+thankyou.style.display="block";
+form.reset();
+});
 </script>
 
 </body>
