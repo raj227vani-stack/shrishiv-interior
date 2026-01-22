@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,75 +9,138 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #ffffff;
-      color: #222;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #0e0f12, #1b1d22);
+      color: #e5e5e5;
     }
 
     /* ===== HEADER ===== */
     header {
-      background: #222;
-      color: #fff;
-      padding: 15px 30px;
+      background: rgba(10,10,12,0.95);
+      color: #f5f5f5;
+      padding: 20px 60px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    header h1 {
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-box img {
+      height: 52px;
+    }
+
+    .logo-box h1 {
       margin: 0;
       font-size: 22px;
+      letter-spacing: 1.4px;
+      color: #d6b56d;
     }
 
     nav a {
-      color: #fff;
-      margin-left: 20px;
+      color: #f5f5f5;
+      margin-left: 28px;
       text-decoration: none;
-      font-size: 14px;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.4px;
     }
 
-    /* ===== HERO SECTION ===== */
+    nav a:hover {
+      color: #d6b56d;
+    }
+
+    /* ===== HERO ===== */
     .hero {
-      height: 60vh;
-      background: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c") no-repeat center/cover;
+      height: 90vh;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c") center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: #fff;
+      position: relative;
     }
 
-    .hero h2 {
-      font-size: 42px;
-      background: rgba(0,0,0,0.5);
-      padding: 15px 25px;
-      border-radius: 10px;
+    .hero-content {
+      z-index: 2;
+      max-width: 900px;
+      padding: 20px;
     }
 
-    /* ===== INTERIOR SLIDER SECTION ===== */
-    .interior-slider-section {
-      padding: 60px 20px;
-      background: #f7f7f7;
+    .hero-content h2 {
+      font-size: 56px;
+      margin: 0;
+      letter-spacing: 2px;
+      color: #f5f5f5;
+    }
+
+    .hero-content p {
+      font-size: 20px;
+      margin-top: 20px;
+      line-height: 1.7;
+      color: #d0d0d0;
+    }
+
+    .hero-content button {
+      margin-top: 40px;
+      background: linear-gradient(135deg, #d6b56d, #f0d58b);
+      color: #000;
+      border: none;
+      padding: 18px 48px;
+      border-radius: 30px;
+      font-weight: 800;
+      font-size: 16px;
+      cursor: pointer;
+      letter-spacing: 1px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.8);
+    }
+
+    .hero-content button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 45px rgba(0,0,0,1);
+    }
+
+    section {
+      padding: 90px 40px;
       text-align: center;
     }
 
-    .slider-heading {
-      font-size: 36px;
-      margin-bottom: 40px;
-      color: #222;
+    section h2 {
+      margin-bottom: 60px;
+      font-size: 38px;
+      letter-spacing: 1.6px;
+      color: #f3f3f3;
+    }
+
+    /* ===== SLIDER SECTION ===== */
+    .interior-slider-section {
+      background: #121318;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
     .slider-container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
       position: relative;
       overflow: hidden;
-      border-radius: 16px;
+      border-radius: 22px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.9);
     }
 
     .slider-track {
       display: flex;
-      transition: transform 0.6s ease-in-out;
+      transition: transform 0.7s ease-in-out;
     }
 
     .slide {
@@ -86,9 +150,8 @@
 
     .slide img {
       width: 100%;
-      height: 450px;
+      height: 480px;
       object-fit: cover;
-      border-radius: 16px;
     }
 
     .slide-content {
@@ -96,159 +159,281 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(0, 0, 0, 0.55);
+      background: rgba(0, 0, 0, 0.65);
       color: #fff;
-      padding: 25px;
-      border-radius: 0 0 16px 16px;
+      padding: 28px;
     }
 
     .slide-content h3 {
-      font-size: 26px;
-      margin-bottom: 10px;
+      margin: 0 0 10px;
+      font-size: 28px;
+      color: #f0d58b;
     }
 
     .slide-content p {
-      font-size: 15px;
+      font-size: 16px;
       line-height: 1.6;
+      color: #ddd;
     }
 
     .slider-dots {
-      margin-top: 15px;
+      margin-top: 18px;
     }
 
     .dot {
-      height: 10px;
-      width: 10px;
-      margin: 0 5px;
-      background-color: #bbb;
+      height: 11px;
+      width: 11px;
+      margin: 0 6px;
+      background-color: #666;
       border-radius: 50%;
       display: inline-block;
       cursor: pointer;
     }
 
     .dot.active {
-      background-color: #6c63ff;
+      background-color: #d6b56d;
     }
 
-    /* ===== FOOTER ===== */
-    footer {
-      background: #222;
-      color: #fff;
+    /* ===== ABOUT ===== */
+    .about-box {
+      background: #1c1e23;
+      border-radius: 26px;
+      padding: 70px;
+      max-width: 1050px;
+      margin: auto;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.9);
+      line-height: 1.9;
+      font-size: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #d0d0d0;
+    }
+
+    /* ===== PROJECTS ===== */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .projects img {
+      width: 100%;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.9);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .projects img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 18px 45px rgba(0,0,0,1);
+    }
+
+    /* ===== CONTACT ===== */
+    .contact {
+      background: linear-gradient(135deg, #0c0e12, #16181e);
+      border-radius: 26px;
+      padding: 70px;
+      max-width: 1000px;
+      margin: auto;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: #e6e6e6;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: #111218;
+      color: #f5f5f5;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    form button {
+      display: block;
+      margin: 30px auto 0;
+      background: linear-gradient(135deg, #d6b56d, #f0d58b);
+      color: #000;
+      padding: 18px 48px;
+      border: none;
+      border-radius: 30px;
+      font-weight: 900;
+      font-size: 16px;
+      letter-spacing: 1px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.8);
+      cursor: pointer;
+    }
+
+    /* ===== QR ===== */
+    .qr-box {
+      margin-top: 40px;
       text-align: center;
-      padding: 15px;
+    }
+
+    .qr-box img {
+      width: 180px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.9);
+    }
+
+    .qr-box p {
+      margin-top: 12px;
+      font-weight: 700;
+      color: #d6b56d;
+      letter-spacing: 0.5px;
+    }
+
+    footer {
+      background: #0a0b0f;
+      padding: 20px;
+      text-align: center;
       font-size: 14px;
+      color: #aaa;
+      border-top: 1px solid rgba(255,255,255,0.05);
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
+<header>
+  <div class="logo-box">
+    <img src="shrishiv-website/logo.png" alt="Shrishiv Logo">
     <h1>Shrishiv Interior Designs</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Services</a>
-      <a href="#">Projects</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
+  </div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h2>Beautiful Interior Solutions</h2>
-  </section>
+<div class="hero">
+  <div class="hero-content">
+    <h2>Luxury Interiors Crafted With Perfection</h2>
+    <p>
+      We design elegant, modern and functional interiors that reflect your lifestyle.
+      From full home makeovers to modular kitchens and custom furniture — we do it all.
+    </p>
+    <button onclick="document.getElementById('contact').scrollIntoView()">Enquire Now</button>
+  </div>
+</div>
 
-  <!-- ===== EXTRA INTERIOR SLIDER SECTION ===== -->
-  <section class="interior-slider-section">
-    <h2 class="slider-heading">Discover The World Of Interior Solution</h2>
+<!-- SLIDER SECTION -->
+<section class="interior-slider-section">
+  <h2>Discover The World Of Interior Solutions</h2>
 
-    <div class="slider-container">
-      <div class="slider-track">
+  <div class="slider-container">
+    <div class="slider-track">
 
-        <!-- Slide 1 -->
-        <div class="slide">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Full Home Interiors">
-          <div class="slide-content">
-            <h3>Full Home Interiors</h3>
-            <p>
-              Indulge in luxury and functionality with our comprehensive interior solutions.
-              We blend high-quality materials and strategic design to craft interiors that are visually pleasing and practical.
-            </p>
-          </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+        <div class="slide-content">
+          <h3>Full Home Interiors</h3>
+          <p>Premium end-to-end home interior solutions with flawless execution.</p>
         </div>
-
-        <!-- Slide 2 -->
-        <div class="slide">
-          <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c36" alt="Modular Kitchen">
-          <div class="slide-content">
-            <h3>Modular Kitchen</h3>
-            <p>
-              Immerse in efficiency and elegance with our tailor-made kitchen designs.
-              We integrate top-notch materials and innovative design to create beautiful and efficient kitchens.
-            </p>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="slide">
-          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6" alt="Modular Furniture">
-          <div class="slide-content">
-            <h3>Modular Furniture</h3>
-            <p>
-              Experience comfort and style with our customizable furniture solutions.
-              We merge premium materials and smart design to provide furniture that is attractive and practical.
-            </p>
-          </div>
-        </div>
-
       </div>
 
-      <!-- Dots -->
-      <div class="slider-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c36">
+        <div class="slide-content">
+          <h3>Modular Kitchen</h3>
+          <p>Smart, stylish and space-efficient modular kitchen designs.</p>
+        </div>
       </div>
+
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6">
+        <div class="slide-content">
+          <h3>Custom Furniture</h3>
+          <p>Tailor-made furniture that blends comfort, durability and elegance.</p>
+        </div>
+      </div>
+
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 Shrishiv Interior Designs. All rights reserved.
-  </footer>
+    <div class="slider-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</section>
 
-  <!-- ===== SLIDER SCRIPT ===== -->
-  <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll(".slide");
-    const dots = document.querySelectorAll(".dot");
-    const sliderTrack = document.querySelector(".slider-track");
+<section id="about">
+  <h2>About Us</h2>
+  <div class="about-box">
+    Shrishiv Interior Designs is a premium interior design studio delivering modern,
+    elegant and functional spaces. With a strong focus on quality, innovation and client
+    satisfaction, we transform homes into masterpieces.
+  </div>
+</section>
 
-    function showSlide(index) {
-      if (index >= slides.length) currentSlide = 0;
-      if (index < 0) currentSlide = slides.length - 1;
+<section id="projects">
+  <h2>Our Projects</h2>
+  <div class="projects">
+    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85">
+    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2">
+    <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf">
+  </div>
+</section>
 
-      sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+<section id="contact">
+  <h2>Enquiry Form</h2>
+  <div class="contact">
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="tel" placeholder="Your Phone" required>
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Enquiry</button>
+    </form>
 
-      dots.forEach(dot => dot.classList.remove("active"));
-      dots[currentSlide].classList.add("active");
-    }
+    <div class="qr-box">
+      <img src="shrishiv-website/insta-qr.png" alt="Instagram QR">
+      <p>Scan to visit our Instagram</p>
+    </div>
+  </div>
+</section>
 
-    function nextSlide() {
-      currentSlide++;
+<footer>
+  © 2026 Shrishiv Interior Designs. All rights reserved.
+</footer>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".slide");
+  const dots = document.querySelectorAll(".dot");
+  const sliderTrack = document.querySelector(".slider-track");
+
+  function showSlide(index) {
+    if (index >= slides.length) currentSlide = 0;
+    if (index < 0) currentSlide = slides.length - 1;
+
+    sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[currentSlide].classList.add("active");
+  }
+
+  function nextSlide() {
+    currentSlide++;
+    showSlide(currentSlide);
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      currentSlide = index;
       showSlide(currentSlide);
-    }
-
-    dots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        currentSlide = index;
-        showSlide(currentSlide);
-      });
     });
+  });
 
-    setInterval(nextSlide, 4000);
-  </script>
+  setInterval(nextSlide, 4000);
+</script>
 
 </body>
 </html>
