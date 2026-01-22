@@ -118,7 +118,7 @@ box-shadow:0 20px 60px rgba(0,0,0,.9);
 
 .slider-track{
 display:flex;
-animation:slide 18s infinite linear;
+animation:slide 22s infinite linear;
 }
 
 .slider-track img{
@@ -130,15 +130,17 @@ object-fit:cover;
 
 @keyframes slide{
 0%{transform:translateX(0);}
-33%{transform:translateX(-100%);}
-66%{transform:translateX(-200%);}
+20%{transform:translateX(-100%);}
+40%{transform:translateX(-200%);}
+60%{transform:translateX(-300%);}
+80%{transform:translateX(-400%);}
 100%{transform:translateX(0);}
 }
 
 /* VIDEO SECTION */
 .video-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:25px;
 max-width:1100px;
 margin:auto;
@@ -156,7 +158,6 @@ border:1px solid rgba(255,255,255,.08);
 width:100%;
 border-radius:14px;
 }
-
 </style>
 </head>
 
@@ -168,11 +169,8 @@ border-radius:14px;
 <h1>Shrishiv Interior Designs</h1>
 </div>
 <nav>
-<a href="#about">About</a>
-<a href="#services">Services</a>
 <a href="#projects">Projects</a>
 <a href="#walkthroughs">Walkthroughs</a>
-<a href="#contact">Enquiry</a>
 </nav>
 </header>
 
@@ -181,8 +179,8 @@ border-radius:14px;
 <h2>Luxury Interiors Crafted With Perfection</h2>
 <p>Transforming spaces into elegant living experiences.</p>
 <div class="btns">
-<a href="#contact">Get Free Consultation</a>
 <a href="#projects">View Our Work</a>
+<a href="#walkthroughs">Watch Walkthroughs</a>
 </div>
 </div>
 </div>
@@ -204,10 +202,10 @@ border-radius:14px;
 <h2>Project Walkthroughs</h2>
 <div class="video-grid">
 <div class="video-card">
-<video src="VIDEO1.mp4" autoplay muted loop controls></video>
+<video src="VIDEO1.mp4" autoplay muted loop controls playsinline></video>
 </div>
 <div class="video-card">
-<video src="VIDEO2.mp4" autoplay muted loop controls></video>
+<video src="VIDEO2.mp4" autoplay muted loop controls playsinline></video>
 </div>
 </div>
 </section>
