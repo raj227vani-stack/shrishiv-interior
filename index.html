@@ -195,6 +195,7 @@ width:100%;
 min-width:100%;
 height:420px;
 object-fit:cover;
+cursor:pointer;
 }
 
 @keyframes slide{
@@ -307,6 +308,38 @@ text-decoration:none;
 font-weight:700;
 box-shadow:0 10px 25px rgba(0,0,0,.9);
 }
+
+/* IMAGE ZOOM MODAL */
+.img-modal{
+display:none;
+position:fixed;
+z-index:6000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.95);
+}
+
+.img-modal .modal-content{
+display:block;
+margin:auto;
+max-width:90%;
+max-height:90%;
+margin-top:5%;
+border-radius:14px;
+box-shadow:0 20px 60px rgba(0,0,0,.9);
+}
+
+.img-modal .close{
+position:absolute;
+top:20px;
+right:30px;
+font-size:40px;
+font-weight:900;
+color:#fff;
+cursor:pointer;
+}
 </style>
 </head>
 
@@ -376,20 +409,23 @@ MANAGING HEAD AND MAIN INTERIOR DESIGNER – UMANG VANI
 </div>
 </section>
 
-<!-- 🔥 OUR PROJECTS – FIXED PATHS ONLY -->
 <section id="projects">
 <h2>Our Projects</h2>
 <div class="slider">
 <div class="slider-track">
-<img src="shrishiv-website/PHOTO1.png">
-<img src="shrishiv-website/PHOTO2.png">
-<img src="shrishiv-website/PHOTO3.png">
-<img src="shrishiv-website/PHOTO4.png">
-<img src="shrishiv-website/PHOTO5.png">
+<img src="shrishiv-website/PHOTO1.png" onclick="openModal(this.src)">
+<img src="shrishiv-website/PHOTO2.png" onclick="openModal(this.src)">
+<img src="shrishiv-website/PHOTO3.png" onclick="openModal(this.src)">
+<img src="shrishiv-website/PHOTO4.png" onclick="openModal(this.src)">
+<img src="shrishiv-website/PHOTO5.png" onclick="openModal(this.src)">
 </div>
 </div>
 </section>
-<!-- 🔥 END -->
+
+<div id="imgModal" class="img-modal">
+<span class="close" onclick="closeModal()">×</span>
+<img class="modal-content" id="modalImg">
+</div>
 
 <section id="testimonials">
 <h2>Client Testimonials</h2>
@@ -477,6 +513,15 @@ window.open("https://wa.me/7415914573?text="+msg,"_blank");
 thankyou.style.display="block";
 form.reset();
 });
+
+function openModal(src){
+  document.getElementById("imgModal").style.display="block";
+  document.getElementById("modalImg").src=src;
+}
+
+function closeModal(){
+  document.getElementById("imgModal").style.display="none";
+}
 </script>
 
 </body>
