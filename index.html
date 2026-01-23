@@ -8,11 +8,11 @@
 <style>
 html { scroll-behavior: smooth; }
 
-/* AMERICAN PROFESSIONAL COLOR THEME: Warm Greige & Slate Blue */
+/* PROFESSIONAL THEME: Warm Greige & Slate Blue (American Pro Look) */
 body {
 margin:0;
 font-family:"Segoe UI",Arial,sans-serif;
-background: #f2efeb; /* Professional Warm Greige */
+background: #f2efeb; 
 color:#333;
 }
 
@@ -38,7 +38,7 @@ gap:14px;
 margin:0;
 font-size:20px;
 letter-spacing:2px;
-color:#1a2a3a; /* Deep Slate Blue */
+color:#1a2a3a;
 text-transform: uppercase;
 }
 
@@ -88,7 +88,7 @@ padding:16px 40px;
 text-decoration:none;
 font-weight:700;
 letter-spacing:1px;
-background:#1a2a3a; /* Solid Slate Blue Button */
+background:#1a2a3a; 
 color:#fff;
 transition: 0.3s;
 }
@@ -185,11 +185,9 @@ margin:auto;
 overflow-x: auto;
 white-space: nowrap;
 padding: 20px 0;
-cursor: grab;
 scrollbar-width: thin;
 scrollbar-color: #1a2a3a transparent;
 }
-
 .slider-container::-webkit-scrollbar { height: 6px; }
 .slider-container::-webkit-scrollbar-thumb { background: #1a2a3a; border-radius: 10px; }
 
@@ -197,7 +195,6 @@ scrollbar-color: #1a2a3a transparent;
 display: inline-flex;
 gap: 15px;
 }
-
 .slider-track img {
 height:420px;
 width: auto;
@@ -205,7 +202,6 @@ object-fit:cover;
 cursor: pointer;
 transition: .3s;
 }
-.slider-track img:hover { opacity: 0.9; }
 
 /* LIGHTBOX */
 #lightbox{
@@ -302,7 +298,6 @@ background:rgba(255,255,255,.98);
 z-index:5000;
 text-align:center;
 }
-
 #thankyou .box{
 max-width:650px;
 margin:10% auto;
@@ -318,7 +313,7 @@ right:20px;
 bottom:20px;
 background:#25D366;
 color:#fff;
-padding:14px 20px;
+padding:14px 25px;
 border-radius:2px;
 text-decoration:none;
 font-weight:700;
@@ -345,8 +340,8 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 
 <div class="hero">
 <div>
-<h2>Refined Living Spaces</h2>
-<p>Modern Interior Design with American Craftsmanship.</p>
+<h2>Redefining Indian Spaces</h2>
+<p>Modern Interior Excellence with Indian Heritage.</p>
 <div class="btns">
 <a href="#contact">Consult Now</a>
 <a href="#projects">Portfolio</a>
@@ -355,14 +350,14 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 </div>
 
 <section id="about">
-<h2>Our Story</h2>
+<h2>Professional Excellence</h2>
 <div class="stats-box">
-<div class="stat-card"><span>5+</span> Experience</div>
+<div class="stat-card"><span>5+</span> Years Exp.</div>
 <div class="stat-card"><span>10+</span> Cities</div>
 <div class="stat-card"><span>Pan India</span> Service</div>
 </div>
 <div class="about-box">
-<p>Shrishiv Interior Designs is a professionally managed interior design firm. We believe every space should reflect its owner's personality. From concept to completion, we handle everything with premium finishing and professional execution.</p>
+<p>Shrishiv Interior Designs is a professionally managed Indian firm. We blend modern aesthetics with local craftsmanship to create spaces that reflect your soul. From luxury homes to professional offices, we handle every detail with precision.</p>
 <div class="highlight-name">UMANG VANI – MANAGING HEAD</div>
 </div>
 </section>
@@ -370,7 +365,7 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 <section id="services">
 <h2>Expertise</h2>
 <div class="services">
-<div class="service-card"><h3>Full Home Interior</h3><p>Complete interior solutions for your dream home.</p></div>
+<div class="service-card"><h3>Full Home Interior</h3><p>Complete luxury solutions for your dream home.</p></div>
 <div class="service-card"><h3>Modular Kitchen</h3><p>Modern, stylish and space-efficient kitchens.</p></div>
 <div class="service-card"><h3>Bedroom Design</h3><p>Comfort-focused bedroom interiors.</p></div>
 <div class="service-card"><h3>Living Room</h3><p>Luxury living room aesthetics.</p></div>
@@ -383,7 +378,7 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 
 <section id="projects" style="background:#fff;">
 <h2>Portfolio</h2>
-<p style="margin-bottom:20px; color:#888;">Scroll left/right to view. Click image to enlarge.</p>
+<p style="margin-bottom:20px; color:#888;">Swipe left/right to browse. Click to enlarge.</p>
 <div class="slider-container">
     <div class="slider-track">
         <img src="assets/images/PHOTO1.png" onclick="openLightbox(this.src)">
@@ -401,7 +396,7 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 </div>
 
 <section id="testimonials">
-<h2>Testimonials</h2>
+<h2>Client Reviews</h2>
 <div class="testimonials">
 <div class="testimonial">⭐⭐⭐⭐⭐<br>"Outstanding work quality and on-time delivery." – Rahul Sharma</div>
 <div class="testimonial">⭐⭐⭐⭐⭐<br>"Beautiful designs and professional team." – Neha Patel</div>
@@ -410,42 +405,42 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 </section>
 
 <section id="contact">
-<h2>Get In Touch</h2>
+<h2>Enquiry</h2>
 <div class="contact">
 <form id="enquiryForm">
-<input type="text" id="name" placeholder="Name" required>
-<input type="email" id="email" placeholder="Email" required>
+<input type="text" id="name" placeholder="Full Name" required>
+<input type="email" id="email" placeholder="Email Address" required>
 <select id="interiorType" required>
-<option value="">Interior Type</option>
+<option value="">Project Type</option>
 <option>Full Home</option>
 <option>Modular Kitchen</option>
 <option>Commercial</option>
-<option>3D Design</option>
+<option>Renovation</option>
 </select>
-<textarea id="description" rows="5" placeholder="Requirements" required></textarea>
+<textarea id="description" rows="5" placeholder="Your Requirements" required></textarea>
 <button type="submit">Submit Enquiry</button>
 </form>
 
 <div class="qr-box">
 <img src="assets/images/QR.png">
-<p>Follow our Instagram</p>
+<p>Visit our Instagram</p>
 </div>
 
 <div class="map-box">
-<iframe src="http://googleusercontent.com/maps.google.com/3" width="100%" height="300" style="border:0;" allowfullscreen loading="lazy"></iframe>
+<iframe src="http://googleusercontent.com/maps.google.com/4" width="100%" height="300" style="border:0;" allowfullscreen loading="lazy"></iframe>
 </div>
 </div>
 </section>
 
-<footer>©️ 2026 Shrishiv Interior Designs. All rights reserved.</footer>
+<footer>©️ 2026 Shrishiv Interior Designs. Sophistication in every corner.</footer>
 
-<a class="whatsapp-float" href="https://wa.me/7415914573" target="_blank">WhatsApp</a>
+<a class="whatsapp-float" href="https://wa.me/7415914573" target="_blank">WhatsApp Chat</a>
 
 <div id="thankyou">
 <div class="box">
-<h1 style="color:#1a2a3a">THANK YOU</h1>
-<p>We will contact you soon!</p>
-<button onclick="document.getElementById('thankyou').style.display='none'" style="background:#1a2a3a; color:white; border:none; padding:10px 20px; cursor:pointer;">Close</button>
+<h1 style="color:#1a2a3a">NAMASTE</h1>
+<p>We have received your enquiry and will contact you shortly.</p>
+<button onclick="document.getElementById('thankyou').style.display='none'" style="background:#1a2a3a; color:white; border:none; padding:10px 20px; cursor:pointer; margin-top:20px;">Close</button>
 </div>
 </div>
 
@@ -462,7 +457,7 @@ const form=document.getElementById("enquiryForm");
 form.addEventListener("submit",function(e){
     e.preventDefault();
     const name=document.getElementById("name").value;
-    const msg= "New Enquiry from " + name;
+    const msg= "New Enquiry from Shrishiv Website: " + name;
     window.open("https://wa.me/7415914573?text="+encodeURIComponent(msg),"_blank");
     document.getElementById("thankyou").style.display="block";
     form.reset();
