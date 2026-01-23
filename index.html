@@ -11,12 +11,13 @@ html { scroll-behavior: smooth; }
 body {
 margin:0;
 font-family:"Segoe UI",Arial,sans-serif;
-background:linear-gradient(135deg,#0e0f12,#1b1d22);
-color:#e5e5e5;
+/* Turkish Off-White Theme */
+background: #fdfbf9; 
+color:#444;
 }
 
 header{
-background:rgba(10,10,12,.95);
+background:rgba(255,255,255,.95);
 padding:20px 60px;
 display:flex;
 justify-content:space-between;
@@ -25,7 +26,7 @@ position:sticky;
 top:0;
 z-index:1000;
 backdrop-filter:blur(12px);
-border-bottom:1px solid rgba(255,255,255,.08);
+border-bottom:1px solid #eee;
 }
 
 .logo-box{
@@ -38,22 +39,24 @@ gap:14px;
 margin:0;
 font-size:22px;
 letter-spacing:1.4px;
-color:#d6b56d;
+/* Deep Charcoal for Professional Look */
+color:#2d2a26;
 }
 
 nav a{
-color:#f5f5f5;
+color:#555;
 margin-left:28px;
 text-decoration:none;
 font-weight:600;
 font-size:15px;
+transition: 0.3s;
 }
-nav a:hover{color:#d6b56d;}
+nav a:hover{color:#b38b59;} /* Turkish Muted Gold */
 
 .hero{
 height:92vh;
 background:
-linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
 url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80")
 center/cover no-repeat;
 display:flex;
@@ -73,7 +76,7 @@ animation:fadeIn 1.4s ease;
 .hero p{
 font-size:20px;
 margin:20px 0 35px;
-color:#d0d0d0;
+color:#f0f0f0;
 animation:fadeIn 2s ease;
 }
 
@@ -85,9 +88,10 @@ border-radius:30px;
 text-decoration:none;
 font-weight:700;
 letter-spacing:1px;
-background:linear-gradient(135deg,#d6b56d,#f0d58b);
-color:#000;
-box-shadow:0 12px 30px rgba(0,0,0,.8);
+/* Elegant Bronze-Gold Gradient */
+background:linear-gradient(135deg,#b38b59,#d4ae7b);
+color:#fff;
+box-shadow:0 12px 30px rgba(179,139,89,.3);
 }
 
 @keyframes fadeIn{
@@ -104,7 +108,7 @@ h2{
 font-size:38px;
 margin-bottom:50px;
 letter-spacing:1.6px;
-color:#f3f3f3;
+color:#2d2a26;
 }
 
 /* STATS */
@@ -116,33 +120,33 @@ max-width:900px;
 margin:40px auto;
 }
 .stat-card{
-background:#1c1e23;
+background:#fff;
 padding:25px;
 border-radius:20px;
-border:1px solid rgba(255,255,255,.08);
-box-shadow:0 12px 28px rgba(0,0,0,.9);
+border:1px solid #f0efed;
+box-shadow:0 10px 25px rgba(0,0,0,.04);
 font-size:18px;
 font-weight:700;
 }
 .stat-card span{
 display:block;
 font-size:30px;
-color:#d6b56d;
+color:#b38b59;
 margin-bottom:10px;
 }
 
 /* ABOUT */
 .about-box{
-background:#1c1e23;
+background:#fff;
 border-radius:26px;
 padding:70px;
 max-width:1050px;
 margin:auto;
-box-shadow:0 15px 40px rgba(0,0,0,.9);
+box-shadow:0 15px 40px rgba(0,0,0,.04);
 line-height:1.9;
 font-size:18px;
-border:1px solid rgba(255,255,255,.08);
-color:#d0d0d0;
+border:1px solid #f0efed;
+color:#666;
 text-align:left;
 }
 
@@ -151,7 +155,7 @@ margin-top:40px;
 text-align:center;
 font-size:22px;
 font-weight:900;
-color:#d6b56d;
+color:#b38b59;
 letter-spacing:1px;
 }
 
@@ -165,16 +169,16 @@ margin:auto;
 }
 
 .service-card{
-background:#1c1e23;
+background:#fff;
 padding:35px;
 border-radius:20px;
-border:1px solid rgba(255,255,255,.08);
-box-shadow:0 12px 28px rgba(0,0,0,.9);
+border:1px solid #f0efed;
+box-shadow:0 10px 25px rgba(0,0,0,.03);
 transition:.4s;
 }
-.service-card:hover{transform:translateY(-8px);}
-.service-card h3{color:#d6b56d;margin:0 0 10px;}
-.service-card p{font-size:15px;color:#ccc;}
+.service-card:hover{transform:translateY(-8px); border-color: #b38b59;}
+.service-card h3{color:#b38b59;margin:0 0 10px;}
+.service-card p{font-size:15px;color:#888;}
 
 /* PROJECT SLIDER */
 .slider{
@@ -182,27 +186,33 @@ max-width:1100px;
 margin:auto;
 overflow:hidden;
 border-radius:26px;
-box-shadow:0 20px 60px rgba(0,0,0,.9);
+box-shadow:0 20px 60px rgba(0,0,0,.1);
 }
 
 .slider-track{
 display:flex;
-animation:slide 18s infinite linear;
+width: 500%; 
+animation:slide 25s infinite linear;
 }
 
 .slider-track img{
-width:100%;
-min-width:100%;
+width:20%; 
 height:420px;
 object-fit:cover;
-cursor:pointer;
 }
 
 @keyframes slide{
-0%{transform:translateX(0);}
-33%{transform:translateX(-100%);}
-66%{transform:translateX(-200%);}
-100%{transform:translateX(0);}
+0% { transform: translateX(0); }
+15% { transform: translateX(0); }
+20% { transform: translateX(-20%); }
+35% { transform: translateX(-20%); }
+40% { transform: translateX(-40%); }
+55% { transform: translateX(-40%); }
+60% { transform: translateX(-60%); }
+75% { transform: translateX(-60%); }
+80% { transform: translateX(-80%); }
+95% { transform: translateX(-80%); }
+100% { transform: translateX(0); }
 }
 
 /* TESTIMONIALS */
@@ -214,59 +224,66 @@ max-width:1000px;
 margin:auto;
 }
 .testimonial{
-background:#1c1e23;
+background:#fff;
 padding:35px;
 border-radius:20px;
-border:1px solid rgba(255,255,255,.08);
-box-shadow:0 12px 28px rgba(0,0,0,.9);
+border:1px solid #f0efed;
+box-shadow:0 10px 25px rgba(0,0,0,.03);
 font-size:16px;
-color:#ddd;
+color:#666;
 }
 
 /* CONTACT */
 .contact{
-background:linear-gradient(135deg,#0c0e12,#16181e);
+background:#fff;
 border-radius:26px;
 padding:70px;
 max-width:1000px;
 margin:auto;
-box-shadow:0 20px 60px rgba(0,0,0,.9);
-border:1px solid rgba(255,255,255,.06);
+box-shadow:0 20px 60px rgba(0,0,0,.05);
+border:1px solid #f0efed;
 }
 
 form input,form textarea,form select{
 width:100%;
 padding:16px;
 border-radius:14px;
-border:1px solid rgba(255,255,255,.08);
-background:#111218;
-color:#f5f5f5;
+border:1px solid #eee;
+background:#fcfcfc;
+color:#333;
 margin-bottom:20px;
 }
 
 form button{
 display:block;
 margin:30px auto 0;
-background:linear-gradient(135deg,#d6b56d,#f0d58b);
-color:#000;
+background:linear-gradient(135deg,#b38b59,#d4ae7b);
+color:#fff;
 padding:18px 48px;
 border:none;
 border-radius:30px;
 font-weight:900;
 font-size:16px;
-box-shadow:0 12px 30px rgba(0,0,0,.8);
+box-shadow:0 12px 30px rgba(179,139,89,.3);
 cursor:pointer;
 }
 
-.qr-box{text-align:center;margin-top:40px;}
-.qr-box img{width:180px;border-radius:14px;box-shadow:0 10px 25px rgba(0,0,0,.9);}
+.qr-box{text-align:center;margin-top:40px; color:#888;}
+.qr-box img{width:180px;border-radius:14px;box-shadow:0 10px 25px rgba(0,0,0,.05);}
 
 /* MAP */
 .map-box{
 margin-top:40px;
 border-radius:20px;
 overflow:hidden;
-box-shadow:0 12px 28px rgba(0,0,0,.9);
+box-shadow:0 12px 28px rgba(0,0,0,.05);
+}
+
+footer {
+    padding: 40px;
+    background: #f4f2f0;
+    color: #888;
+    text-align: center;
 }
 
 /* THANK YOU */
@@ -274,24 +291,24 @@ box-shadow:0 12px 28px rgba(0,0,0,.9);
 display:none;
 position:fixed;
 inset:0;
-background:rgba(0,0,0,.92);
+background:rgba(255,255,255,.96);
 z-index:5000;
-color:#fff;
+color:#333;
 text-align:center;
 }
 
 #thankyou .box{
 max-width:650px;
 margin:10% auto;
-background:#1c1e23;
+background:#fff;
 padding:70px;
 border-radius:26px;
-box-shadow:0 25px 60px rgba(0,0,0,.9);
-border:1px solid rgba(255,255,255,.08);
+box-shadow:0 25px 60px rgba(0,0,0,.1);
+border:1px solid #eee;
 }
 
-#thankyou h1{color:#d6b56d;font-size:32px;}
-#thankyou p{font-size:20px;color:#ccc;}
+#thankyou h1{color:#b38b59;font-size:32px;}
+#thankyou p{font-size:20px;color:#666;}
 
 /* FLOATING WHATSAPP */
 .whatsapp-float{
@@ -304,25 +321,7 @@ padding:14px 20px;
 border-radius:30px;
 text-decoration:none;
 font-weight:700;
-box-shadow:0 10px 25px rgba(0,0,0,.9);
-}
-
-/* LIGHTBOX */
-#lightbox{
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.95);
-z-index:9999;
-justify-content:center;
-align-items:center;
-}
-#lightbox img{
-max-width:95%;
-max-height:95%;
-transform:scale(1);
-transition:.3s;
-cursor:zoom-in;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 </style>
 </head>
@@ -397,11 +396,11 @@ MANAGING HEAD AND MAIN INTERIOR DESIGNER – UMANG VANI
 <h2>Our Projects</h2>
 <div class="slider">
 <div class="slider-track">
-<img src="assets/images/PHOTO1.png" onclick="openLightbox(this.src)">
-<img src="assets/images/PHOTO2.png" onclick="openLightbox(this.src)">
-<img src="assets/images/PHOTO3.png" onclick="openLightbox(this.src)">
-<img src="assets/images/PHOTO4.png" onclick="openLightbox(this.src)">
-<img src="assets/images/PHOTO5.png" onclick="openLightbox(this.src)">
+<img src="assets/images/PHOTO1.png">
+<img src="assets/images/PHOTO2.png">
+<img src="assets/images/PHOTO3.png">
+<img src="assets/images/PHOTO4.png">
+<img src="assets/images/PHOTO5.png">
 </div>
 </div>
 </section>
@@ -448,7 +447,7 @@ MANAGING HEAD AND MAIN INTERIOR DESIGNER – UMANG VANI
 
 <div class="map-box">
 <iframe 
-src="https://www.google.com/maps?q=Indore,India&output=embed"
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1!2d0!3d0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAwJzAwLjAiTiA3N8KwMDAnMDAuMCJF!5e0!3m2!1sen!2sin!4v1"
 width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
 </iframe>
 </div>
@@ -457,7 +456,7 @@ width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
 </section>
 
 <footer>
-© 2026 Shrishiv Interior Designs. All rights reserved.
+©️ 2026 Shrishiv Interior Designs. All rights reserved.
 </footer>
 
 <a class="whatsapp-float" href="https://wa.me/7415914573" target="_blank">WhatsApp</a>
@@ -466,11 +465,8 @@ width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
 <div class="box">
 <h1>THANK YOU FOR CHOOSING<br>SHRISHIV INTERIOR DESIGNS</h1>
 <p>SHRISHIV INTERIOR DESIGNERS WILL CONTACT YOU SOON</p>
+<button onclick="document.getElementById('thankyou').style.display='none'" style="margin-top:20px; padding:10px 20px; border-radius:10px; border:none; background:#b38b59; color:white; cursor:pointer;">Close</button>
 </div>
-</div>
-
-<div id="lightbox" onclick="closeLightbox()">
-<img id="lightbox-img">
 </div>
 
 <script>
@@ -495,23 +491,6 @@ const msg=
 window.open("https://wa.me/7415914573?text="+msg,"_blank");
 thankyou.style.display="block";
 form.reset();
-});
-
-function openLightbox(src){
-const lb=document.getElementById("lightbox");
-const img=document.getElementById("lightbox-img");
-img.src=src;
-img.style.transform="scale(1)";
-lb.style.display="flex";
-}
-
-function closeLightbox(){
-document.getElementById("lightbox").style.display="none";
-}
-
-document.getElementById("lightbox-img").addEventListener("click",function(e){
-e.stopPropagation();
-this.style.transform = this.style.transform==="scale(2)" ? "scale(1)" : "scale(2)";
 });
 </script>
 
