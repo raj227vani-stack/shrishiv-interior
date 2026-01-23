@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shrishiv Interior Designs | Luxury Reimagined</title>
+    <title>Shrishiv Interior Designs | Luxury Turkish Edition</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -12,26 +12,21 @@
             --turkish-cyan: #00acc1;
             --turkish-light: #e0f7fa;
             --turkish-dark: #006064;
-            --gold-accent: #d6b56d;
-            --glass: rgba(255, 255, 255, 0.2);
-            --text-main: #2c3e50;
+            --glass: rgba(255, 255, 255, 0.7);
+            --text-main: #1a2a2b;
+            --shadow: 0 20px 40px rgba(0,0,0,0.08);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         html { scroll-behavior: smooth; }
 
         body {
-            background: linear-gradient(135deg, #f0fafa 0%, #ffffff 100%);
+            background: #f4fbfc;
             color: var(--text-main);
             overflow-x: hidden;
         }
 
-        /* --- Custom Scrollbar --- */
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: var(--turkish-light); }
-        ::-webkit-scrollbar-thumb { background: var(--turkish-cyan); border-radius: 5px; }
-
-        /* --- Navigation --- */
+        /* --- Navbar --- */
         nav {
             position: fixed;
             top: 20px;
@@ -39,30 +34,30 @@
             transform: translateX(-50%);
             width: 90%;
             max-width: 1200px;
-            background: rgba(255, 255, 255, 0.7);
+            background: var(--glass);
             backdrop-filter: blur(15px);
-            padding: 12px 30px;
-            border-radius: 50px;
+            padding: 12px 35px;
+            border-radius: 100px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
             border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow);
         }
 
-        .logo-box { display: flex; align-items: center; gap: 10px; }
-        .logo-box img { height: 45px; border-radius: 50%; }
-        .logo-box h1 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--turkish-dark); }
+        .logo-box { display: flex; align-items: center; gap: 12px; }
+        .logo-box img { height: 40px; border-radius: 50%; }
+        .logo-box h1 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--turkish-dark); letter-spacing: 1px; }
 
-        nav ul { display: flex; list-style: none; gap: 20px; }
-        nav ul a { text-decoration: none; color: var(--turkish-dark); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        nav ul { display: flex; list-style: none; gap: 25px; }
+        nav ul a { text-decoration: none; color: var(--turkish-dark); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; transition: 0.3s; }
         nav ul a:hover { color: var(--turkish-cyan); }
 
-        /* --- Hero Section --- */
+        /* --- Hero --- */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(224, 247, 250, 0.7), rgba(255, 255, 255, 0.7)), 
+            background: linear-gradient(rgba(224, 247, 250, 0.6), rgba(255, 255, 255, 0.8)), 
                         url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
@@ -76,161 +71,157 @@
 
         .hero h2 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
             color: var(--turkish-dark);
-            line-height: 1.1;
             margin-bottom: 20px;
-            animation: fadeIn 1s ease;
+            animation: slideUp 1s ease;
         }
 
-        .hero p { font-size: 1.2rem; color: #555; max-width: 600px; margin-bottom: 30px; }
+        .hero p { font-size: 1.2rem; color: #444; margin-bottom: 35px; letter-spacing: 1px; }
 
-        .btn-main {
+        .btn-gold {
             background: var(--turkish-cyan);
             color: white;
-            padding: 15px 40px;
+            padding: 16px 45px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            box-shadow: 0 10px 20px rgba(0, 172, 193, 0.3);
-            transition: 0.3s;
+            box-shadow: 0 10px 25px rgba(0, 172, 193, 0.3);
+            transition: 0.4s;
         }
-        .btn-main:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0, 172, 193, 0.5); }
+        .btn-gold:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0, 172, 193, 0.5); }
 
-        /* --- Stats Card --- */
-        .stats-container {
+        /* --- Stats --- */
+        .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            width: 80%;
-            margin: -50px auto 50px;
+            width: 85%;
+            margin: -60px auto 60px;
+            position: relative;
             z-index: 10;
         }
         .stat-card {
             background: white;
-            padding: 30px;
-            border-radius: 20px;
+            padding: 35px;
+            border-radius: 25px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-            border-bottom: 4px solid var(--turkish-cyan);
+            box-shadow: var(--shadow);
+            border-bottom: 5px solid var(--turkish-cyan);
         }
-        .stat-card h3 { font-size: 2.5rem; color: var(--turkish-dark); }
+        .stat-card h3 { font-size: 2.5rem; color: var(--turkish-dark); font-family: 'Playfair Display', serif; }
 
-        /* --- Sections --- */
+        /* --- About --- */
         section { padding: 100px 10%; }
-        .section-title {
+        .section-title { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--turkish-dark); text-align: center; margin-bottom: 60px; }
+
+        .about-content {
+            background: white;
+            padding: 60px;
+            border-radius: 40px;
+            box-shadow: var(--shadow);
+            line-height: 1.9;
+            font-size: 1.1rem;
+            position: relative;
+        }
+        .founder {
+            margin-top: 40px;
+            padding: 20px;
+            background: var(--turkish-light);
+            border-radius: 15px;
             text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-weight: 800;
             color: var(--turkish-dark);
-            margin-bottom: 50px;
+            border: 1px dashed var(--turkish-cyan);
         }
 
-        /* --- Services Grid --- */
+        /* --- Services --- */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
         }
-        .service-item {
+        .service-card {
             background: white;
             padding: 40px;
-            border-radius: 25px;
-            transition: 0.4s;
-            border: 1px solid #f0f0f0;
-            text-align: center;
-        }
-        .service-item i { font-size: 2.5rem; color: var(--turkish-cyan); margin-bottom: 20px; }
-        .service-item:hover { background: var(--turkish-light); transform: translateY(-10px); }
-
-        /* --- Portfolio Slider --- */
-        .slider-wrapper {
-            overflow: hidden;
             border-radius: 30px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+            transition: 0.4s;
+            text-align: center;
+            border: 1px solid #eef7f8;
         }
-        .slider-track { display: flex; animation: scroll 20s infinite linear; }
-        .slider-track img { width: 100%; min-width: 100%; height: 500px; object-fit: cover; }
+        .service-card i { font-size: 2.8rem; color: var(--turkish-cyan); margin-bottom: 20px; }
+        .service-card:hover { transform: translateY(-10px); background: var(--turkish-light); }
 
-        @keyframes scroll {
+        /* --- Projects Slider --- */
+        .slider-box {
+            overflow: hidden;
+            border-radius: 40px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+        }
+        .slider-track { display: flex; animation: slideShow 25s infinite linear; }
+        .slider-track img { width: 100%; min-width: 100%; height: 550px; object-fit: cover; }
+
+        @keyframes slideShow {
             0% { transform: translateX(0); }
             100% { transform: translateX(-400%); }
         }
 
-        /* --- About Box (Turkish Style) --- */
-        .about-glass {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(10px);
-            padding: 60px;
-            border-radius: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-        .founder-tag {
-            margin-top: 30px;
-            background: var(--turkish-dark);
-            color: white;
-            padding: 15px;
-            border-radius: 15px;
-            display: inline-block;
-            font-weight: 700;
-        }
-
-        /* --- Form --- */
-        .contact-flex {
+        /* --- Contact --- */
+        .contact-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 0.8fr;
             gap: 50px;
             background: white;
-            padding: 50px;
-            border-radius: 30px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            padding: 60px;
+            border-radius: 40px;
+            box-shadow: var(--shadow);
         }
-        input, textarea, select {
+        input, select, textarea {
             width: 100%;
-            padding: 15px;
+            padding: 18px;
             margin-bottom: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
             border: 1px solid #ddd;
-            background: #f9f9f9;
+            background: #fcfdfe;
         }
-        .btn-submit {
+        .submit-btn {
             width: 100%;
+            padding: 18px;
             background: var(--turkish-dark);
             color: white;
-            padding: 15px;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             font-weight: 700;
             cursor: pointer;
+            transition: 0.3s;
         }
+        .submit-btn:hover { background: var(--turkish-cyan); }
 
-        /* --- WhatsApp Floating --- */
-        .wa-float {
+        /* --- Floating WhatsApp --- */
+        .wa-btn {
             position: fixed;
             bottom: 30px;
             right: 30px;
             background: #25D366;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
-            font-size: 30px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            font-size: 32px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             z-index: 2000;
             text-decoration: none;
         }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
 
-        @media (max-width: 768px) {
-            .contact-flex { grid-template-columns: 1fr; }
+        @media (max-width: 900px) {
+            .contact-container { grid-template-columns: 1fr; }
             nav ul { display: none; }
-            .hero h2 { font-size: 2.5rem; }
+            section { padding: 60px 5%; }
         }
     </style>
 </head>
@@ -239,52 +230,54 @@
     <nav>
         <div class="logo-box">
             <img src="assets/images/logo.png" alt="Logo">
-            <h1>SHRISHIV</h1>
+            <h1>SHRISHIV DESIGNS</h1>
         </div>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Work</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <section class="hero">
-        <h2>Luxury Interiors <br><span style="color: var(--turkish-cyan);">For Modern Living</span></h2>
-        <p>Expertly designed spaces by Umang Vani. We don't just design rooms; we craft experiences.</p>
-        <a href="#contact" class="btn-main">Book Free Consultation</a>
+        <h2>Elegance in <span style="color: var(--turkish-cyan);">Every Detail</span></h2>
+        <p>Premium Interior Solutions Across All India</p>
+        <a href="#contact" class="btn-gold">Start Your Project</a>
     </section>
 
-    <div class="stats-container">
-        <div class="stat-card"><h3>5+</h3><p>Years Excellence</p></div>
-        <div class="stat-card"><h3>10+</h3><p>Cities Covered</p></div>
-        <div class="stat-card"><h3>100%</h3><p>India Wide</p></div>
+    <div class="stats">
+        <div class="stat-card"><h3>5+</h3><p>Years Experience</p></div>
+        <div class="stat-card"><h3>10+</h3><p>Cities Served</p></div>
+        <div class="stat-card"><h3>All India</h3><p>Service Available</p></div>
     </div>
 
     <section id="about">
-        <h2 class="section-title">Our Story</h2>
-        <div class="about-glass">
-            <p>Shrishiv Interior Designs is a professionally managed interior design firm with more than five years of experience. We have successfully delivered premium projects across more than ten cities, making us a trusted name in luxury lifestyle enhancement.</p>
-            <p style="margin-top: 15px;">Interior design enhances lifestyle quality and long-term property value. Our team ensures smooth execution and premium finishing, believing that every space should reflect its owner's personality.</p>
-            <div class="founder-tag">MANAGING HEAD: UMANG VANI</div>
+        <h2 class="section-title">Luxury Meets Function</h2>
+        <div class="about-content">
+            <p>Shrishiv Interior Designs is a professionally managed interior design firm with more than five years of experience. We have successfully delivered premium projects across more than ten cities.</p>
+            <p style="margin-top:15px;">We create personalized, functional and elegant spaces that reflect your personality. From concept to completion, our team ensures smooth execution and premium finishing.</p>
+            <div class="founder">
+                MANAGING HEAD & MAIN DESIGNER: UMANG VANI
+            </div>
         </div>
     </section>
 
     <section id="services">
-        <h2 class="section-title">Exclusive Services</h2>
+        <h2 class="section-title">Our Expertise</h2>
         <div class="services-grid">
-            <div class="service-item"><i class="fas fa-home"></i><h3>Full Interior</h3><p>End-to-end solutions for homes.</p></div>
-            <div class="service-item"><i class="fas fa-utensils"></i><h3>Modular Kitchen</h3><p>Smart and stylish kitchens.</p></div>
-            <div class="service-item"><i class="fas fa-bed"></i><h3>Bedroom</h3><p>Comfort meets luxury.</p></div>
-            <div class="service-item"><i class="fas fa-couch"></i><h3>Living Room</h3><p>The heart of your home.</p></div>
-            <div class="service-item"><i class="fas fa-briefcase"></i><h3>Office</h3><p>Workspaces that inspire.</p></div>
-            <div class="service-item"><i class="fas fa-cube"></i><h3>3D Design</h3><p>Visualise before you build.</p></div>
+            <div class="service-card"><i class="fas fa-couch"></i><h3>Luxury Living</h3><p>Elegant living room aesthetics.</p></div>
+            <div class="service-card"><i class="fas fa-blender"></i><h3>Modular Kitchen</h3><p>Modern and space-efficient.</p></div>
+            <div class="service-card"><i class="fas fa-bed"></i><h3>Bedroom Design</h3><p>Comfort-focused interiors.</p></div>
+            <div class="service-card"><i class="fas fa-building"></i><h3>Office Interior</h3><p>Professional workspaces.</p></div>
+            <div class="service-card"><i class="fas fa-vr-cardboard"></i><h3>3D Visualisation</h3><p>Preview before execution.</p></div>
+            <div class="service-card"><i class="fas fa-paint-roller"></i><h3>Renovation</h3><p>Upgrade existing spaces.</p></div>
         </div>
     </section>
 
     <section id="projects">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="slider-wrapper">
+        <h2 class="section-title">Our Masterpieces</h2>
+        <div class="slider-box">
             <div class="slider-track">
                 <img src="assets/images/PHOTO1.png">
                 <img src="assets/images/PHOTO2.png">
@@ -296,46 +289,44 @@
     </section>
 
     <section id="contact">
-        <h2 class="section-title">Start Your Journey</h2>
-        <div class="contact-flex">
-            <form id="enquiryForm">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Your Email" required>
-                <select id="interiorType">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <form id="enqForm">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <select id="type">
                     <option>Full Home Interior</option>
                     <option>Modular Kitchen</option>
-                    <option>Commercial</option>
-                    <option>Renovation</option>
+                    <option>Bedroom Design</option>
+                    <option>Office Interior</option>
                 </select>
-                <textarea id="description" rows="4" placeholder="Brief about your dream space"></textarea>
-                <button type="submit" class="btn-submit">Request Call Back</button>
+                <textarea id="msg" rows="5" placeholder="Tell us about your requirements"></textarea>
+                <button type="submit" class="submit-btn">Send Enquiry via WhatsApp</button>
             </form>
             <div style="text-align: center;">
-                <h3 style="margin-bottom: 20px;">Scan to Follow</h3>
-                <img src="assets/images/QR.png" style="width: 200px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
-                <p style="margin-top: 20px; color: #777;">Follow our journey on Instagram for daily inspiration.</p>
+                <h3 style="margin-bottom: 20px;">Instagram QR</h3>
+                <img src="assets/images/QR.png" style="width: 180px; border-radius: 20px; box-shadow: var(--shadow);">
                 <div style="margin-top: 30px;">
-                    <iframe src="https://www.google.com/maps?q=Indore,India&output=embed" width="100%" height="150" style="border-radius:15px; border:none;"></iframe>
+                    <iframe src="https://www.google.com/maps?q=Indore,India&output=embed" width="100%" height="200" style="border-radius:20px; border:none;"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 40px; background: var(--turkish-dark); color: white;">
-        <p>©️ 2026 Shrishiv Interior Designs. Crafted by Innovation.</p>
+    <footer style="text-align: center; padding: 50px; background: var(--turkish-dark); color: white; opacity: 0.9;">
+        <p>©️ 2026 Shrishiv Interior Designs | All Rights Reserved</p>
     </footer>
 
-    <a href="https://wa.me/7415914573" class="wa-float" target="_blank">
+    <a href="https://wa.me/7415914573" class="wa-btn" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
-        document.getElementById("enquiryForm").addEventListener("submit", function(e) {
+        document.getElementById("enqForm").addEventListener("submit", function(e) {
             e.preventDefault();
             const name = document.getElementById("name").value;
-            const type = document.getElementById("interiorType").value;
-            const msg = `Hi Shrishiv Team, I am ${name}. I am interested in ${type} service.`;
-            window.open(`https://wa.me/7415914573?text=${encodeURIComponent(msg)}`, "_blank");
+            const type = document.getElementById("type").value;
+            const text = `New Enquiry from Shrishiv Website:%0AName: ${name}%0AType: ${type}`;
+            window.open(`https://wa.me/7415914573?text=${text}`, "_blank");
         });
     </script>
 </body>
