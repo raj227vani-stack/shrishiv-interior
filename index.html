@@ -9,419 +9,489 @@
 html { scroll-behavior: smooth; }
 
 body {
-    margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    /* Professional Light Theme Background */
-    background: #f8f9fa;
-    color: #333;
+margin:0;
+font-family:"Segoe UI",Arial,sans-serif;
+background: #fdfdfd; /* Light Professional Background */
+color:#333; /* Darker text for readability */
 }
 
-header {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 15px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+header{
+background:rgba(255,255,255,.95);
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(0,0,0,.08);
 }
 
-.logo-box {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+.logo-box{
+display:flex;
+align-items:center;
+gap:14px;
 }
-.logo-box img { height: 50px; }
-.logo-box h1 {
-    margin: 0;
-    font-size: 22px;
-    letter-spacing: 1px;
-    color: #b38b40; /* Refined Gold */
-}
-
-nav a {
-    color: #444;
-    margin-left: 28px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-    transition: 0.3s;
-}
-nav a:hover { color: #b38b40; }
-
-.hero {
-    height: 85vh;
-    background: 
-        linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
-        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80") 
-        center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+.logo-box img{height:52px;}
+.logo-box h1{
+margin:0;
+font-size:22px;
+letter-spacing:1.4px;
+color:#d6b56d; /* Maintaining your brand gold */
 }
 
-.hero h2 {
-    font-size: 55px;
-    margin: 0;
-    color: #1a1a1a;
-    animation: fadeIn 1.4s ease;
-    text-shadow: 0 2px 10px rgba(255,255,255,0.8);
+nav a{
+color:#333;
+margin-left:28px;
+text-decoration:none;
+font-weight:600;
+font-size:15px;
+}
+nav a:hover{color:#d6b56d;}
+
+.hero{
+height:92vh;
+background:
+linear-gradient(rgba(255,255,255,.4),rgba(255,255,255,.4)),
+url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80")
+center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
 }
 
-.hero p {
-    font-size: 20px;
-    margin: 20px 0 35px;
-    color: #444;
-    animation: fadeIn 2s ease;
+.hero h2{
+font-size:60px;
+letter-spacing:2px;
+margin:0;
+color:#111;
+animation:fadeIn 1.4s ease;
 }
 
-.hero .btns a {
-    display: inline-block;
-    margin: 0 10px;
-    padding: 15px 35px;
-    border-radius: 4px; /* Square edges look more professional for interiors */
-    text-decoration: none;
-    font-weight: 700;
-    background: #b38b40;
-    color: #fff;
-    box-shadow: 0 4px 15px rgba(179,139,64,0.3);
-    transition: 0.3s;
+.hero p{
+font-size:20px;
+margin:20px 0 35px;
+color:#444;
+animation:fadeIn 2s ease;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+.hero .btns a{
+display:inline-block;
+margin:0 10px;
+padding:16px 36px;
+border-radius:30px;
+text-decoration:none;
+font-weight:700;
+letter-spacing:1px;
+background:linear-gradient(135deg,#d6b56d,#f0d58b);
+color:#000;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
-section { padding: 80px 40px; text-align: center; }
-
-h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
-    color: #1a1a1a;
-    position: relative;
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
 }
-h2::after {
-    content: '';
-    width: 50px;
-    height: 3px;
-    background: #b38b40;
-    display: block;
-    margin: 10px auto;
+
+section{
+padding:90px 40px;
+text-align:center;
+}
+
+h2{
+font-size:38px;
+margin-bottom:50px;
+letter-spacing:1.6px;
+color:#111;
 }
 
 /* STATS */
-.stats-box {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    max-width: 900px;
-    margin: 0 auto 40px;
+.stats-box{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+max-width:900px;
+margin:40px auto;
 }
-.stat-card {
-    background: #fff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    font-weight: 600;
+.stat-card{
+background:#fff;
+padding:25px;
+border-radius:20px;
+border:1px solid rgba(0,0,0,.05);
+box-shadow:0 8px 25px rgba(0,0,0,.05);
+font-size:18px;
+font-weight:700;
 }
-.stat-card span {
-    display: block;
-    font-size: 35px;
-    color: #b38b40;
-    margin-bottom: 5px;
+.stat-card span{
+display:block;
+font-size:30px;
+color:#d6b56d;
+margin-bottom:10px;
 }
 
 /* ABOUT */
-.about-box {
-    background: #fff;
-    padding: 60px;
-    max-width: 1000px;
-    margin: auto;
-    border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.04);
-    line-height: 1.8;
-    text-align: left;
+.about-box{
+background:#fff;
+border-radius:26px;
+padding:70px;
+max-width:1050px;
+margin:auto;
+box-shadow:0 15px 40px rgba(0,0,0,.05);
+line-height:1.9;
+font-size:18px;
+border:1px solid rgba(0,0,0,.05);
+color:#444;
+text-align:left;
 }
-.highlight-name {
-    margin-top: 40px;
-    text-align: center;
-    font-weight: 900;
-    color: #b38b40;
+
+.highlight-name{
+margin-top:40px;
+text-align:center;
+font-size:22px;
+font-weight:900;
+color:#d6b56d;
+letter-spacing:1px;
 }
 
 /* SERVICES */
-.services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-    max-width: 1100px;
-    margin: auto;
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+max-width:1100px;
+margin:auto;
 }
-.service-card {
-    background: #fff;
-    padding: 40px 30px;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    transition: 0.3s;
+
+.service-card{
+background:#fff;
+padding:35px;
+border-radius:20px;
+border:1px solid rgba(0,0,0,.05);
+box-shadow:0 12px 28px rgba(0,0,0,.05);
+transition:.4s;
 }
-.service-card:hover { transform: translateY(-10px); background: #b38b40; color: #fff; }
-.service-card:hover h3, .service-card:hover p { color: #fff; }
-.service-card h3 { color: #b38b40; margin-bottom: 15px; }
+.service-card:hover{transform:translateY(-8px); border-color:#d6b56d;}
+.service-card h3{color:#d6b56d;margin:0 0 10px;}
+.service-card p{font-size:15px;color:#666;}
 
 /* MANUAL PROJECT SLIDER */
-.slider-container {
-    max-width: 1100px;
-    margin: auto;
-    overflow-x: auto;
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-    scroll-behavior: smooth;
-    scrollbar-width: none; /* Hide scrollbar Firefox */
+.slider-container{
+max-width:1100px;
+margin:auto;
+display:flex;
+gap:20px;
+overflow-x: auto;
+padding: 20px 0;
+scroll-snap-type: x mandatory;
+scrollbar-width: none;
 }
-.slider-container::-webkit-scrollbar { display: none; } /* Hide scrollbar Chrome/Safari */
+.slider-container::-webkit-scrollbar { display: none; }
 
-.slider-container img {
-    min-width: 350px;
-    height: 450px;
-    object-fit: cover;
-    border-radius: 8px;
-    cursor: zoom-in;
-    transition: 0.3s;
+.slider-container img{
+min-width: 100%;
+height:500px;
+object-fit:cover;
+border-radius:26px;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+scroll-snap-align: center;
+cursor: pointer;
 }
-.slider-container img:hover { opacity: 0.9; }
 
-/* LIGHTBOX (ZOOM) */
+/* LIGHTBOX FOR ZOOM */
 #lightbox {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
+display: none;
+position: fixed;
+z-index: 9999;
+top: 0; left: 0; width: 100%; height: 100%;
+background: rgba(0,0,0,0.9);
+justify-content: center;
+align-items: center;
 }
-#lightbox img { max-width: 90%; max-height: 80%; border-radius: 5px; }
-.close-lightbox {
-    position: absolute;
-    top: 30px; right: 40px;
-    color: #fff; font-size: 40px; cursor: pointer;
-}
+#lightbox img { max-width: 90%; max-height: 85%; border-radius: 10px; }
+.close-btn { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; }
 
 /* TESTIMONIALS */
-.testimonials {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    max-width: 1000px;
-    margin: auto;
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+max-width:1000px;
+margin:auto;
 }
-.testimonial {
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    font-style: italic;
+.testimonial{
+background:#fff;
+padding:35px;
+border-radius:20px;
+border:1px solid rgba(0,0,0,.05);
+box-shadow:0 12px 28px rgba(0,0,0,.05);
+font-size:16px;
+color:#444;
 }
 
 /* CONTACT */
-.contact {
-    background: #fff;
-    padding: 60px;
-    max-width: 800px;
-    margin: auto;
-    border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-}
-form input, form textarea, form select {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-form button {
-    width: 100%;
-    background: #b38b40;
-    color: #fff;
-    padding: 18px;
-    border: none;
-    border-radius: 4px;
-    font-weight: 700;
-    cursor: pointer;
+.contact{
+background:#fff;
+border-radius:26px;
+padding:70px;
+max-width:1000px;
+margin:auto;
+box-shadow:0 20px 60px rgba(0,0,0,.05);
+border:1px solid rgba(0,0,0,.05);
 }
 
-.qr-box img { width: 150px; margin-top: 30px; }
-
-footer {
-    padding: 40px;
-    background: #1a1a1a;
-    color: #fff;
-    text-align: center;
+form input,form textarea,form select{
+width:100%;
+padding:16px;
+border-radius:14px;
+border:1px solid #ddd;
+background:#fdfdfd;
+color:#333;
+margin-bottom:20px;
 }
 
-/* WHATSAPP */
-.whatsapp-float {
-    position: fixed;
-    right: 20px; bottom: 20px;
-    background: #25D366;
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+form button{
+display:block;
+margin:30px auto 0;
+background:linear-gradient(135deg,#d6b56d,#f0d58b);
+color:#000;
+padding:18px 48px;
+border:none;
+border-radius:30px;
+font-weight:900;
+font-size:16px;
+box-shadow:0 12px 30px rgba(0,0,0,.15);
+cursor:pointer;
 }
 
-#thankyou {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(255,255,255,0.95);
-    z-index: 5000;
-    text-align: center;
+.qr-box{text-align:center;margin-top:40px;}
+.qr-box img{width:180px;border-radius:14px;box-shadow:0 10px 25px rgba(0,0,0,.05);}
+
+/* MAP */
+.map-box{
+margin-top:40px;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 12px 28px rgba(0,0,0,.1);
 }
-#thankyou .box { margin: 15% auto; color: #333; }
+
+/* THANK YOU */
+#thankyou{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(255,255,255,.95);
+z-index:5000;
+color:#111;
+text-align:center;
+}
+
+#thankyou .box{
+max-width:650px;
+margin:10% auto;
+background:#fff;
+padding:70px;
+border-radius:26px;
+box-shadow:0 25px 60px rgba(0,0,0,.1);
+border:1px solid #ddd;
+}
+
+#thankyou h1{color:#d6b56d;font-size:32px;}
+#thankyou p{font-size:20px;color:#444;}
+
+/* FLOATING WHATSAPP */
+.whatsapp-float{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25D366;
+color:#fff;
+padding:14px 20px;
+border-radius:30px;
+text-decoration:none;
+font-weight:700;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
 </style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo-box">
-        <img src="shrishiv-website/logo.png" alt="Logo">
-        <h1>Shrishiv Interior Designs</h1>
-    </div>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#testimonials">Reviews</a>
-        <a href="#contact">Enquiry</a>
-    </nav>
+<div class="logo-box">
+<img src="shrishiv-website/logo.png">
+<h1>Shrishiv Interior Designs</h1>
+</div>
+<nav>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+<a href="#testimonials">Reviews</a>
+<a href="#contact">Enquiry</a>
+</nav>
 </header>
 
 <div class="hero">
-    <div>
-        <h2>Elegant Spaces,<br>Luxury Living</h2>
-        <p>Premium Interior Solutions Across India</p>
-        <div class="btns">
-            <a href="#contact">Get Free Consultation</a>
-            <a href="#projects">View Our Work</a>
-        </div>
-    </div>
+<div>
+<h2>Luxury Interiors Crafted With Perfection</h2>
+<p>Transforming spaces into elegant living experiences.</p>
+<div class="btns">
+<a href="#contact">Get Free Consultation</a>
+<a href="#projects">View Our Work</a>
+</div>
+</div>
 </div>
 
 <section id="about">
-    <h2>About Our Firm</h2>
-    <div class="stats-box">
-        <div class="stat-card"><span>5+</span> Years Exp.</div>
-        <div class="stat-card"><span>10+</span> Cities</div>
-        <div class="stat-card"><span>100%</span> Quality</div>
-    </div>
-    <div class="about-box">
-        <p>Shrishiv Interior Designs is a professionally managed interior design firm with more than five years of experience. We have successfully delivered premium projects across more than ten cities.</p>
-        <p>We create personalized, functional and elegant spaces that enhance lifestyle quality and long-term property value. From concept to completion, we handle everything.</p>
-        <div class="highlight-name">MANAGING HEAD – UMANG VANI</div>
-    </div>
+<h2>About Us</h2>
+
+<div class="stats-box">
+<div class="stat-card"><span>5+</span> Years Experience</div>
+<div class="stat-card"><span>10+</span> Cities Served</div>
+<div class="stat-card"><span>All India</span> Service</div>
+</div>
+
+<div class="about-box">
+<p>Shrishiv Interior Designs is a professionally managed interior design firm with more than five years of experience.</p>
+<p>We have successfully delivered premium projects across more than ten cities.</p>
+<p>Our services are available all across India.</p>
+<p>Interior design enhances lifestyle quality and long-term property value.</p>
+<p>We create personalized, functional and elegant spaces.</p>
+<p>Our team ensures smooth execution and premium finishing.</p>
+<p>We believe every space should reflect its owner's personality.</p>
+<p>From concept to completion, we handle everything.</p>
+
+<div class="highlight-name">
+MANAGING HEAD AND MAIN INTERIOR DESIGNER – UMANG VANI
+</div>
+</div>
 </section>
 
-<section id="services" style="background:#f0f2f5;">
-    <h2>Specialized Services</h2>
-    <div class="services">
-        <div class="service-card"><h3>Full Home Interior</h3><p>End-to-end solutions for homes.</p></div>
-        <div class="service-card"><h3>Modular Kitchen</h3><p>Smart and stylish cooking spaces.</p></div>
-        <div class="service-card"><h3>Bedroom Design</h3><p>Your personal sanctuary, redesigned.</p></div>
-        <div class="service-card"><h3>Office Interior</h3><p>Productive and modern workspaces.</p></div>
-    </div>
+<section id="services" style="background:#f9f9f9;">
+<h2>Our Services</h2>
+<div class="services">
+<div class="service-card"><h3>Full Home Interior</h3><p>Complete interior solutions for your dream home.</p></div>
+<div class="service-card"><h3>Modular Kitchen</h3><p>Modern, stylish and space-efficient kitchens.</p></div>
+<div class="service-card"><h3>Bedroom Design</h3><p>Comfort-focused bedroom interiors.</p></div>
+<div class="service-card"><h3>Living Room</h3><p>Luxury living room aesthetics.</p></div>
+<div class="service-card"><h3>Office Interior</h3><p>Professional workspace designs.</p></div>
+<div class="service-card"><h3>3D Visualisation</h3><p>Preview your interiors before execution.</p></div>
+<div class="service-card"><h3>Exterior Design</h3><p>Premium exterior elevation designs.</p></div>
+<div class="service-card"><h3>Renovation</h3><p>Upgrade your existing spaces.</p></div>
+</div>
 </section>
 
 <section id="projects">
-    <h2>Our Signature Projects</h2>
-    <p style="margin-bottom: 20px; color: #666;">(Swipe or scroll to see more. Click to enlarge)</p>
-    <div class="slider-container" id="projectSlider">
-        <img src="https://picsum.photos/1200/600?random=1" onclick="openLightbox(this.src)">
-        <img src="https://picsum.photos/1200/600?random=2" onclick="openLightbox(this.src)">
-        <img src="https://picsum.photos/1200/600?random=3" onclick="openLightbox(this.src)">
-        <img src="https://picsum.photos/1200/600?random=4" onclick="openLightbox(this.src)">
-    </div>
+<h2>Our Projects</h2>
+<p>(Scroll horizontally to view more projects. Click to enlarge.)</p>
+<div class="slider-container">
+<img src="https://picsum.photos/1200/600?random=1" onclick="zoomImg(this)">
+<img src="https://picsum.photos/1200/600?random=2" onclick="zoomImg(this)">
+<img src="https://picsum.photos/1200/600?random=3" onclick="zoomImg(this)">
+</div>
 </section>
 
 <div id="lightbox">
-    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
-    <img id="lightboxImg">
+    <span class="close-btn" onclick="closeZoom()">&times;</span>
+    <img id="zoomTarget">
 </div>
 
-<section id="testimonials">
-    <h2>What Clients Say</h2>
-    <div class="testimonials">
-        <div class="testimonial">"Outstanding work quality and on-time delivery." – Rahul Sharma</div>
-        <div class="testimonial">"Beautiful designs and professional team." – Neha Patel</div>
-    </div>
+<section id="testimonials" style="background:#f9f9f9;">
+<h2>Client Testimonials</h2>
+<div class="testimonials">
+<div class="testimonial">⭐⭐⭐⭐⭐<br>"Outstanding work quality and on-time delivery." – Rahul Sharma</div>
+<div class="testimonial">⭐⭐⭐⭐⭐<br>"Beautiful designs and professional team." – Neha Patel</div>
+<div class="testimonial">⭐⭐⭐⭐⭐<br>"Highly recommended for premium interiors." – Aman Verma</div>
+</div>
 </section>
 
-<section id="contact" style="background:#f0f2f5;">
-    <h2>Book a Consultation</h2>
-    <div class="contact">
-        <form id="enquiryForm">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <select id="interiorType" required>
-                <option value="">Select Service</option>
-                <option>Full Home Interior</option>
-                <option>Modular Kitchen</option>
-                <option>Office Interior</option>
-            </select>
-            <textarea id="description" rows="4" placeholder="Your Requirements" required></textarea>
-            <button type="submit">Send Message on WhatsApp</button>
-        </form>
-        <div class="qr-box">
-            <img src="shrishiv-website/QR.png">
-            <p>Scan for Instagram Updates</p>
-        </div>
-    </div>
+<section id="contact">
+<h2>Enquiry Form</h2>
+<div class="contact">
+<form id="enquiryForm" enctype="multipart/form-data">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="email" id="email" placeholder="Your Email" required>
+
+<select id="interiorType" required>
+<option value="">Select Interior Type</option>
+<option>Full Home Interior</option>
+<option>Bedroom Design</option>
+<option>Living Room Design</option>
+<option>Modular Kitchen</option>
+<option>Office Interior</option>
+<option>Commercial Interior</option>
+<option>3D Visualisation</option>
+<option>Exterior Design</option>
+<option>Renovation</option>
+</select>
+
+<textarea id="description" rows="5" placeholder="Describe your requirements" required></textarea>
+<input type="file" id="file">
+
+<button type="submit">Send Enquiry</button>
+</form>
+
+<div class="qr-box">
+<img src="shrishiv-website/QR.png">
+<p>Scan to visit our Instagram</p>
+</div>
+
+<div class="map-box">
+<iframe 
+src="https://www.google.com/maps?q=Indore,India&output=embed"
+width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
+</iframe>
+</div>
+
+</div>
 </section>
 
-<footer>
-    ©️ 2026 Shrishiv Interior Designs. Premium Craftsmanship.
+<footer style="padding:40px; background:#111; color:#fff;">
+©️ 2026 Shrishiv Interior Designs. All rights reserved.
 </footer>
 
-<a class="whatsapp-float" href="https://wa.me/7415914573" target="_blank">WhatsApp Chat</a>
+<a class="whatsapp-float" href="https://wa.me/7415914573" target="_blank">WhatsApp</a>
 
 <div id="thankyou">
-    <div class="box">
-        <h1>Thank You!</h1>
-        <p>Our team will contact you shortly.</p>
-        <button onclick="document.getElementById('thankyou').style.display='none'" style="padding:10px 20px; cursor:pointer;">Close</button>
-    </div>
+<div class="box">
+<h1>THANK YOU FOR CHOOSING<br>SHRISHIV INTERIOR DESIGNS</h1>
+<p>SHRISHIV INTERIOR DESIGNERS WILL CONTACT YOU SOON</p>
+<button onclick="document.getElementById('thankyou').style.display='none'" style="margin-top:20px; padding:10px 20px; cursor:pointer; border-radius:20px; border:1px solid #ddd;">Close</button>
+</div>
 </div>
 
 <script>
-// Lightbox Functions
-function openLightbox(src) {
-    document.getElementById("lightboxImg").src = src;
+// Zoom Logic
+function zoomImg(el) {
+    document.getElementById("zoomTarget").src = el.src;
     document.getElementById("lightbox").style.display = "flex";
 }
-function closeLightbox() {
+function closeZoom() {
     document.getElementById("lightbox").style.display = "none";
 }
 
-// Form Logic
-const form = document.getElementById("enquiryForm");
-form.addEventListener("submit", function(e) {
-    e.preventDefault();
-    const name = document.getElementById("name").value;
-    const type = document.getElementById("interiorType").value;
-    const msg = `New Enquiry%0AName: ${name}%0AType: ${type}`;
-    window.open("https://wa.me/7415914573?text=" + msg, "_blank");
-    document.getElementById("thankyou").style.display = "block";
-    form.reset();
+const form=document.getElementById("enquiryForm");
+const thankyou=document.getElementById("thankyou");
+
+form.addEventListener("submit",function(e){
+e.preventDefault();
+
+const name=document.getElementById("name").value;
+const email=document.getElementById("email").value;
+const interiorType=document.getElementById("interiorType").value;
+const description=document.getElementById("description").value;
+
+const msg=
+"New Enquiry from Shrishiv Website%0A%0A"+
+"Name: "+name+"%0A"+
+"Email: "+email+"%0A"+
+"Interior Type: "+interiorType+"%0A"+
+"Requirements: "+description;
+
+window.open("https://wa.me/7415914573?text="+msg,"_blank");
+thankyou.style.display="block";
+form.reset();
 });
 </script>
 
