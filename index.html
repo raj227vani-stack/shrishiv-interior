@@ -282,7 +282,6 @@ cursor:pointer;
 .qr-box{text-align:center;margin-top:40px;}
 .qr-box img{width:180px;border-radius:14px;box-shadow:0 10px 25px rgba(0,0,0,.9);}
 
-/* MAP */
 .map-box{
 margin-top:40px;
 border-radius:20px;
@@ -290,7 +289,6 @@ overflow:hidden;
 box-shadow:0 12px 28px rgba(0,0,0,.9);
 }
 
-/* THANK YOU */
 #thankyou{
 display:none;
 position:fixed;
@@ -368,7 +366,23 @@ box-shadow:0 10px 25px rgba(0,0,0,.9);
 <form id="enquiryForm" enctype="multipart/form-data">
 <input type="text" id="name" placeholder="Your Name" required>
 <input type="email" id="email" placeholder="Your Email" required>
+
+<select id="interiorType" required>
+<option value="">Select Interior Type</option>
+<option>Full Home Interior</option>
+<option>Bedroom Design</option>
+<option>Living Room Design</option>
+<option>Modular Kitchen</option>
+<option>Office Interior</option>
+<option>Commercial Interior</option>
+<option>3D Visualisation</option>
+<option>Exterior Design</option>
+<option>Renovation</option>
+</select>
+
 <textarea id="description" rows="5" placeholder="Describe your requirements" required></textarea>
+<input type="file" id="file">
+
 <button type="submit">Send Enquiry</button>
 </form>
 
@@ -376,10 +390,50 @@ box-shadow:0 10px 25px rgba(0,0,0,.9);
 <img src="assets/images/QR.png">
 <p>Scan to visit our Instagram</p>
 </div>
+
+<div class="map-box">
+<iframe 
+src="https://www.google.com/maps?q=Indore,India&output=embed"
+width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
+</iframe>
+</div>
+
 </div>
 </section>
 
+<a class="whatsapp-float" href="https://wa.me/7415914573" target="_blank">WhatsApp</a>
+
+<div id="thankyou">
+<div class="box">
+<h1>THANK YOU FOR CHOOSING<br>SHRISHIV INTERIOR DESIGNS</h1>
+<p>SHRISHIV INTERIOR DESIGNERS WILL CONTACT YOU SOON</p>
+</div>
+</div>
+
 <script>
+const form=document.getElementById("enquiryForm");
+const thankyou=document.getElementById("thankyou");
+
+form.addEventListener("submit",function(e){
+e.preventDefault();
+
+const name=document.getElementById("name").value;
+const email=document.getElementById("email").value;
+const interiorType=document.getElementById("interiorType").value;
+const description=document.getElementById("description").value;
+
+const msg=
+"New Enquiry from Shrishiv Website%0A%0A"+
+"Name: "+name+"%0A"+
+"Email: "+email+"%0A"+
+"Interior Type: "+interiorType+"%0A"+
+"Requirements: "+description;
+
+window.open("https://wa.me/7415914573?text="+msg,"_blank");
+thankyou.style.display="block";
+form.reset();
+});
+
 function openLightbox(img){
 document.getElementById("lightbox").style.display="flex";
 document.getElementById("lightbox-img").src=img.src;
