@@ -15,6 +15,27 @@ background:linear-gradient(135deg,#0e0f12,#1b1d22);
 color:#e5e5e5;
 }
 
+/* LIGHTBOX */
+#lightbox{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.95);
+z-index:9999;
+justify-content:center;
+align-items:center;
+}
+#lightbox img{
+max-width:90%;
+max-height:90%;
+cursor:zoom-in;
+transition:.3s;
+}
+#lightbox img.zoomed{
+transform:scale(1.8);
+cursor:zoom-out;
+}
+
 header{
 background:rgba(10,10,12,.95);
 padding:20px 60px;
@@ -126,6 +147,7 @@ width:100%;
 min-width:100%;
 height:420px;
 object-fit:cover;
+cursor:pointer;
 }
 
 @keyframes slide{
@@ -133,28 +155,6 @@ object-fit:cover;
 33%{transform:translateX(-100%);}
 66%{transform:translateX(-200%);}
 100%{transform:translateX(0);}
-}
-
-/* VIDEO SECTION */
-.video-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:25px;
-max-width:1100px;
-margin:auto;
-}
-
-.video-card{
-background:#1c1e23;
-padding:20px;
-border-radius:20px;
-box-shadow:0 12px 28px rgba(0,0,0,.9);
-border:1px solid rgba(255,255,255,.08);
-}
-
-.video-card video{
-width:100%;
-border-radius:14px;
 }
 
 /* STATS */
@@ -282,6 +282,7 @@ cursor:pointer;
 .qr-box{text-align:center;margin-top:40px;}
 .qr-box img{width:180px;border-radius:14px;box-shadow:0 10px 25px rgba(0,0,0,.9);}
 
+/* MAP */
 .map-box{
 margin-top:40px;
 border-radius:20px;
@@ -313,7 +314,6 @@ border:1px solid rgba(255,255,255,.08);
 #thankyou h1{color:#d6b56d;font-size:32px;}
 #thankyou p{font-size:20px;color:#ccc;}
 
-/* FLOATING WHATSAPP */
 .whatsapp-float{
 position:fixed;
 right:20px;
@@ -331,6 +331,10 @@ box-shadow:0 10px 25px rgba(0,0,0,.9);
 
 <body>
 
+<div id="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img">
+</div>
+
 <header>
 <div class="logo-box">
 <img src="assets/images/logo.png">
@@ -340,87 +344,57 @@ box-shadow:0 10px 25px rgba(0,0,0,.9);
 <a href="#about">About</a>
 <a href="#services">Services</a>
 <a href="#projects">Projects</a>
-<a href="#walkthroughs">Walkthroughs</a>
 <a href="#testimonials">Reviews</a>
 <a href="#contact">Enquiry</a>
 </nav>
 </header>
 
-<div class="hero">
-<div>
-<h2>Luxury Interiors Crafted With Perfection</h2>
-<p>Transforming spaces into elegant living experiences.</p>
-<div class="btns">
-<a href="#contact">Get Free Consultation</a>
-<a href="#projects">View Our Work</a>
-</div>
-</div>
-</div>
-
-<section id="about">
-<h2>About Us</h2>
-<div class="stats-box">
-<div class="stat-card"><span>5+</span> Years Experience</div>
-<div class="stat-card"><span>10+</span> Cities Served</div>
-<div class="stat-card"><span>All India</span> Service</div>
-</div>
-
-<div class="about-box">
-<p>Shrishiv Interior Designs is a professionally managed interior design firm with more than five years of experience.</p>
-<p>We have successfully delivered premium projects across more than ten cities.</p>
-<p>Our services are available all across India.</p>
-<p>Interior design enhances lifestyle quality and long-term property value.</p>
-<p>We create personalized, functional and elegant spaces.</p>
-<p>Our team ensures smooth execution and premium finishing.</p>
-<p>We believe every space should reflect its owner's personality.</p>
-<p>From concept to completion, we handle everything.</p>
-<div class="highlight-name">
-MANAGING HEAD AND MAIN INTERIOR DESIGNER – UMANG VANI
-</div>
-</div>
-</section>
-
-<section id="services">
-<h2>Our Services</h2>
-<div class="services">
-<div class="service-card"><h3>Full Home Interior</h3><p>Complete interior solutions for your dream home.</p></div>
-<div class="service-card"><h3>Modular Kitchen</h3><p>Modern, stylish and space-efficient kitchens.</p></div>
-<div class="service-card"><h3>Bedroom Design</h3><p>Comfort-focused bedroom interiors.</p></div>
-<div class="service-card"><h3>Living Room</h3><p>Luxury living room aesthetics.</p></div>
-<div class="service-card"><h3>Office Interior</h3><p>Professional workspace designs.</p></div>
-<div class="service-card"><h3>3D Visualisation</h3><p>Preview your interiors before execution.</p></div>
-<div class="service-card"><h3>Exterior Design</h3><p>Premium exterior elevation designs.</p></div>
-<div class="service-card"><h3>Renovation</h3><p>Upgrade your existing spaces.</p></div>
-</div>
-</section>
-
 <section id="projects">
 <h2>Our Projects</h2>
 <div class="slider">
 <div class="slider-track">
-<img src="assets/images/PHOTO1.png">
-<img src="assets/images/PHOTO2.png">
-<img src="assets/images/PHOTO3.png">
-<img src="assets/images/PHOTO4.png">
-<img src="assets/images/PHOTO5.png">
+<img src="assets/images/PHOTO1.png" onclick="openLightbox(this)">
+<img src="assets/images/PHOTO2.png" onclick="openLightbox(this)">
+<img src="assets/images/PHOTO3.png" onclick="openLightbox(this)">
+<img src="assets/images/PHOTO4.png" onclick="openLightbox(this)">
+<img src="assets/images/PHOTO5.png" onclick="openLightbox(this)">
 </div>
 </div>
 </section>
 
-<section id="walkthroughs">
-<h2>Project Walkthroughs</h2>
-<div class="video-grid">
-<div class="video-card">
-<video src="assets/videos/VIDEO1.mp4" controls muted loop></video>
-</div>
-<div class="video-card">
-<video src="assets/videos/VIDEO2.mp4" controls muted loop></video>
+<section id="contact">
+<h2>Enquiry Form</h2>
+<div class="contact">
+<form id="enquiryForm" enctype="multipart/form-data">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="email" id="email" placeholder="Your Email" required>
+<textarea id="description" rows="5" placeholder="Describe your requirements" required></textarea>
+<button type="submit">Send Enquiry</button>
+</form>
+
+<div class="qr-box">
+<img src="assets/images/QR.png">
+<p>Scan to visit our Instagram</p>
 </div>
 </div>
 </section>
 
-<section id="testimonials">
-<h2>Client Testimonials</h2>
-<div class="testimonials">
-<div class="testimonial">⭐⭐⭐⭐⭐<br>"Outstanding work quality and on-time delivery." – Rahul Sharma</div>
-<div class="testimonial">⭐⭐⭐⭐र
+<script>
+function openLightbox(img){
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox-img").src=img.src;
+document.getElementById("lightbox-img").classList.remove("zoomed");
+}
+
+function closeLightbox(){
+document.getElementById("lightbox").style.display="none";
+}
+
+document.getElementById("lightbox-img").onclick=function(e){
+e.stopPropagation();
+this.classList.toggle("zoomed");
+}
+</script>
+
+</body>
+</html>
