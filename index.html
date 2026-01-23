@@ -3,64 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Turkish Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Shrishiv Interior Designs | Luxury Reimagined</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         :root {
+            --turkish-cyan: #00acc1;
             --turkish-light: #e0f7fa;
-            --turkish-primary: #00acc1;
             --turkish-dark: #006064;
-            --glass: rgba(255, 255, 255, 0.25);
-            --text-color: #1a2a2b;
+            --gold-accent: #d6b56d;
+            --glass: rgba(255, 255, 255, 0.2);
+            --text-main: #2c3e50;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        html { scroll-behavior: smooth; }
 
         body {
-            background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
-            background-attachment: fixed;
-            color: var(--text-color);
-            scroll-behavior: smooth;
+            background: linear-gradient(135deg, #f0fafa 0%, #ffffff 100%);
+            color: var(--text-main);
+            overflow-x: hidden;
         }
 
         /* --- Custom Scrollbar --- */
-        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: var(--turkish-light); }
-        ::-webkit-scrollbar-thumb { background: var(--turkish-primary); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: var(--turkish-cyan); border-radius: 5px; }
 
-        /* --- Navbar --- */
+        /* --- Navigation --- */
         nav {
             position: fixed;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
             width: 90%;
-            background: var(--glass);
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(15px);
-            padding: 15px 40px;
-            border-radius: 100px;
+            padding: 12px 30px;
+            border-radius: 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        nav .logo { font-weight: 800; font-size: 1.6rem; color: var(--turkish-dark); letter-spacing: 1px; }
-        nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 30px; }
-        nav ul li a { text-decoration: none; color: var(--turkish-dark); font-weight: 600; transition: 0.3s; font-size: 0.9rem; text-transform: uppercase; }
-        nav ul li a:hover { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.2); }
+        .logo-box { display: flex; align-items: center; gap: 10px; }
+        .logo-box img { height: 45px; border-radius: 50%; }
+        .logo-box h1 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--turkish-dark); }
+
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav ul a { text-decoration: none; color: var(--turkish-dark); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        nav ul a:hover { color: var(--turkish-cyan); }
 
         /* --- Hero Section --- */
         .hero {
             height: 100vh;
+            background: linear-gradient(rgba(224, 247, 250, 0.7), rgba(255, 255, 255, 0.7)), 
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -69,160 +74,269 @@
             padding: 0 20px;
         }
 
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            font-weight: 800;
-            line-height: 1;
-            background: linear-gradient(to right, #006064, #00acc1, #006064);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shine 3s linear infinite;
-        }
-
-        @keyframes shine {
-            to { background-position: 200% center; }
-        }
-
-        .hero p {
-            margin-top: 20px;
-            font-size: 1.2rem;
-            letter-spacing: 2px;
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
             color: var(--turkish-dark);
-            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease;
         }
 
-        /* --- Common Section Style --- */
-        .section { padding: 100px 10%; }
+        .hero p { font-size: 1.2rem; color: #555; max-width: 600px; margin-bottom: 30px; }
 
-        /* --- About Section --- */
-        .about-container {
-            background: var(--glass);
+        .btn-main {
+            background: var(--turkish-cyan);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 10px 20px rgba(0, 172, 193, 0.3);
+            transition: 0.3s;
+        }
+        .btn-main:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0, 172, 193, 0.5); }
+
+        /* --- Stats Card --- */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 80%;
+            margin: -50px auto 50px;
+            z-index: 10;
+        }
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--turkish-cyan);
+        }
+        .stat-card h3 { font-size: 2.5rem; color: var(--turkish-dark); }
+
+        /* --- Sections --- */
+        section { padding: 100px 10%; }
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--turkish-dark);
+            margin-bottom: 50px;
+        }
+
+        /* --- Services Grid --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        .service-item {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            transition: 0.4s;
+            border: 1px solid #f0f0f0;
+            text-align: center;
+        }
+        .service-item i { font-size: 2.5rem; color: var(--turkish-cyan); margin-bottom: 20px; }
+        .service-item:hover { background: var(--turkish-light); transform: translateY(-10px); }
+
+        /* --- Portfolio Slider --- */
+        .slider-wrapper {
+            overflow: hidden;
+            border-radius: 30px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+        }
+        .slider-track { display: flex; animation: scroll 20s infinite linear; }
+        .slider-track img { width: 100%; min-width: 100%; height: 500px; object-fit: cover; }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-400%); }
+        }
+
+        /* --- About Box (Turkish Style) --- */
+        .about-glass {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
             padding: 60px;
             border-radius: 40px;
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.05);
-            max-width: 900px;
-            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        .founder-tag {
+            margin-top: 30px;
+            background: var(--turkish-dark);
+            color: white;
+            padding: 15px;
+            border-radius: 15px;
+            display: inline-block;
+            font-weight: 700;
         }
 
-        .about-container h2 { font-size: 2.5rem; color: var(--turkish-dark); margin-bottom: 20px; }
-        .about-container p { font-size: 1.1rem; line-height: 1.8; opacity: 0.8; }
-
-        /* --- Portfolio Grid --- */
-        .portfolio-header { text-align: center; margin-bottom: 50px; }
-        .portfolio-header h2 { font-size: 3rem; color: var(--turkish-dark); }
-
-        .portfolio-grid {
+        /* --- Form --- */
+        .contact-flex {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .portfolio-item {
-            position: relative;
-            border-radius: 30px;
-            overflow: hidden;
-            height: 400px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.5s;
-        }
-
-        .portfolio-item:hover { transform: translateY(-15px) scale(1.02); }
-        .portfolio-item:hover img { transform: scale(1.1); filter: brightness(0.7); }
-
-        .overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,96,100,0.9), transparent);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 30px;
-            opacity: 0;
-            transition: 0.4s;
-        }
-
-        .portfolio-item:hover .overlay { opacity: 1; }
-        .overlay h3 { color: white; font-size: 1.5rem; transform: translateY(20px); transition: 0.4s; }
-        .portfolio-item:hover .overlay h3 { transform: translateY(0); }
-
-        /* --- Footer --- */
-        footer {
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            background: white;
             padding: 50px;
-            text-align: center;
-            background: rgba(255,255,255,0.1);
-            margin-top: 50px;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            background: #f9f9f9;
+        }
+        .btn-submit {
+            width: 100%;
+            background: var(--turkish-dark);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* --- WhatsApp Floating --- */
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            z-index: 2000;
+            text-decoration: none;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            .contact-flex { grid-template-columns: 1fr; }
+            nav ul { display: none; }
+            .hero h2 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">CREATIVE.</div>
+        <div class="logo-box">
+            <img src="assets/images/logo.png" alt="Logo">
+            <h1>SHRISHIV</h1>
+        </div>
         <ul>
-            <li><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <section class="hero">
-        <h1>DESIGN REBORN</h1>
-        <p>AESTHETIC • MINIMAL • TURKISH VIBE</p>
+        <h2>Luxury Interiors <br><span style="color: var(--turkish-cyan);">For Modern Living</span></h2>
+        <p>Expertly designed spaces by Umang Vani. We don't just design rooms; we craft experiences.</p>
+        <a href="#contact" class="btn-main">Book Free Consultation</a>
     </section>
 
-    <section class="section" id="about">
-        <div class="about-container">
-            <h2>About My Vision</h2>
-            <p>Bhai, yahan teri details aayengi. Maine layout aisa banaya hai ki text kam bhi ho toh bhi ye premium dikhe. Ye Glassmorphism effect tere content ko background se alag aur futuristic look deta hai.</p>
+    <div class="stats-container">
+        <div class="stat-card"><h3>5+</h3><p>Years Excellence</p></div>
+        <div class="stat-card"><h3>10+</h3><p>Cities Covered</p></div>
+        <div class="stat-card"><h3>100%</h3><p>India Wide</p></div>
+    </div>
+
+    <section id="about">
+        <h2 class="section-title">Our Story</h2>
+        <div class="about-glass">
+            <p>Shrishiv Interior Designs is a professionally managed interior design firm with more than five years of experience. We have successfully delivered premium projects across more than ten cities, making us a trusted name in luxury lifestyle enhancement.</p>
+            <p style="margin-top: 15px;">Interior design enhances lifestyle quality and long-term property value. Our team ensures smooth execution and premium finishing, believing that every space should reflect its owner's personality.</p>
+            <div class="founder-tag">MANAGING HEAD: UMANG VANI</div>
         </div>
     </section>
 
-    <section class="section" id="portfolio">
-        <div class="portfolio-header">
-            <h2>Selected Works</h2>
+    <section id="services">
+        <h2 class="section-title">Exclusive Services</h2>
+        <div class="services-grid">
+            <div class="service-item"><i class="fas fa-home"></i><h3>Full Interior</h3><p>End-to-end solutions for homes.</p></div>
+            <div class="service-item"><i class="fas fa-utensils"></i><h3>Modular Kitchen</h3><p>Smart and stylish kitchens.</p></div>
+            <div class="service-item"><i class="fas fa-bed"></i><h3>Bedroom</h3><p>Comfort meets luxury.</p></div>
+            <div class="service-item"><i class="fas fa-couch"></i><h3>Living Room</h3><p>The heart of your home.</p></div>
+            <div class="service-item"><i class="fas fa-briefcase"></i><h3>Office</h3><p>Workspaces that inspire.</p></div>
+            <div class="service-item"><i class="fas fa-cube"></i><h3>3D Design</h3><p>Visualise before you build.</p></div>
         </div>
-        
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="PHOTO1.png" alt="Project 1">
-                <div class="overlay"><h3>Project One</h3></div>
-            </div>
+    </section>
 
-            <div class="portfolio-item">
-                <img src="PHOTO2.png" alt="Project 2">
-                <div class="overlay"><h3>Project Two</h3></div>
-            </div>
-
-            <div class="portfolio-item">
-                <img src="PHOTO3.png" alt="Project 3">
-                <div class="overlay"><h3>Project Three</h3></div>
-            </div>
-
-            <div class="portfolio-item">
-                <img src="PHOTO4.png" alt="Project 4">
-                <div class="overlay"><h3>Project Four</h3></div>
-            </div>
-
-            <div class="portfolio-item">
-                <img src="PHOTO5.png" alt="Project 5">
-                <div class="overlay"><h3>Project Five</h3></div>
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="slider-wrapper">
+            <div class="slider-track">
+                <img src="assets/images/PHOTO1.png">
+                <img src="assets/images/PHOTO2.png">
+                <img src="assets/images/PHOTO3.png">
+                <img src="assets/images/PHOTO4.png">
+                <img src="assets/images/PHOTO5.png">
             </div>
         </div>
     </section>
 
-    <footer>
-        <p style="font-weight: 600; color: var(--turkish-dark);">&copy; 2026 Crafted by a Master Coder</p>
+    <section id="contact">
+        <h2 class="section-title">Start Your Journey</h2>
+        <div class="contact-flex">
+            <form id="enquiryForm">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <select id="interiorType">
+                    <option>Full Home Interior</option>
+                    <option>Modular Kitchen</option>
+                    <option>Commercial</option>
+                    <option>Renovation</option>
+                </select>
+                <textarea id="description" rows="4" placeholder="Brief about your dream space"></textarea>
+                <button type="submit" class="btn-submit">Request Call Back</button>
+            </form>
+            <div style="text-align: center;">
+                <h3 style="margin-bottom: 20px;">Scan to Follow</h3>
+                <img src="assets/images/QR.png" style="width: 200px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                <p style="margin-top: 20px; color: #777;">Follow our journey on Instagram for daily inspiration.</p>
+                <div style="margin-top: 30px;">
+                    <iframe src="https://www.google.com/maps?q=Indore,India&output=embed" width="100%" height="150" style="border-radius:15px; border:none;"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; background: var(--turkish-dark); color: white;">
+        <p>©️ 2026 Shrishiv Interior Designs. Crafted by Innovation.</p>
     </footer>
 
+    <a href="https://wa.me/7415914573" class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.getElementById("enquiryForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const name = document.getElementById("name").value;
+            const type = document.getElementById("interiorType").value;
+            const msg = `Hi Shrishiv Team, I am ${name}. I am interested in ${type} service.`;
+            window.open(`https://wa.me/7415914573?text=${encodeURIComponent(msg)}`, "_blank");
+        });
+    </script>
 </body>
 </html>
