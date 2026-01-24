@@ -11,12 +11,12 @@ html { scroll-behavior: smooth; }
 body {
 margin:0;
 font-family:"Segoe UI",Arial,sans-serif;
-background: #fdfdfd; /* Light Professional Background */
-color:#333; /* Darker text for readability */
+background:linear-gradient(135deg,#0e0f12,#1b1d22);
+color:#e5e5e5;
 }
 
 header{
-background:rgba(255,255,255,.95);
+background:rgba(10,10,12,.95);
 padding:20px 60px;
 display:flex;
 justify-content:space-between;
@@ -25,7 +25,7 @@ position:sticky;
 top:0;
 z-index:1000;
 backdrop-filter:blur(12px);
-border-bottom:1px solid rgba(0,0,0,.08);
+border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .logo-box{
@@ -38,11 +38,11 @@ gap:14px;
 margin:0;
 font-size:22px;
 letter-spacing:1.4px;
-color:#d6b56d; /* Maintaining your brand gold */
+color:#d6b56d;
 }
 
 nav a{
-color:#333;
+color:#f5f5f5;
 margin-left:28px;
 text-decoration:none;
 font-weight:600;
@@ -53,7 +53,7 @@ nav a:hover{color:#d6b56d;}
 .hero{
 height:92vh;
 background:
-linear-gradient(rgba(255,255,255,.4),rgba(255,255,255,.4)),
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
 url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80")
 center/cover no-repeat;
 display:flex;
@@ -66,14 +66,14 @@ text-align:center;
 font-size:60px;
 letter-spacing:2px;
 margin:0;
-color:#111;
+color:#fff;
 animation:fadeIn 1.4s ease;
 }
 
 .hero p{
 font-size:20px;
 margin:20px 0 35px;
-color:#444;
+color:#d0d0d0;
 animation:fadeIn 2s ease;
 }
 
@@ -87,7 +87,7 @@ font-weight:700;
 letter-spacing:1px;
 background:linear-gradient(135deg,#d6b56d,#f0d58b);
 color:#000;
-box-shadow:0 8px 20px rgba(0,0,0,.15);
+box-shadow:0 12px 30px rgba(0,0,0,.8);
 }
 
 @keyframes fadeIn{
@@ -104,7 +104,7 @@ h2{
 font-size:38px;
 margin-bottom:50px;
 letter-spacing:1.6px;
-color:#111;
+color:#f3f3f3;
 }
 
 /* STATS */
@@ -116,11 +116,11 @@ max-width:900px;
 margin:40px auto;
 }
 .stat-card{
-background:#fff;
+background:#1c1e23;
 padding:25px;
 border-radius:20px;
-border:1px solid rgba(0,0,0,.05);
-box-shadow:0 8px 25px rgba(0,0,0,.05);
+border:1px solid rgba(255,255,255,.08);
+box-shadow:0 12px 28px rgba(0,0,0,.9);
 font-size:18px;
 font-weight:700;
 }
@@ -133,16 +133,16 @@ margin-bottom:10px;
 
 /* ABOUT */
 .about-box{
-background:#fff;
+background:#1c1e23;
 border-radius:26px;
 padding:70px;
 max-width:1050px;
 margin:auto;
-box-shadow:0 15px 40px rgba(0,0,0,.05);
+box-shadow:0 15px 40px rgba(0,0,0,.9);
 line-height:1.9;
 font-size:18px;
-border:1px solid rgba(0,0,0,.05);
-color:#444;
+border:1px solid rgba(255,255,255,.08);
+color:#d0d0d0;
 text-align:left;
 }
 
@@ -165,52 +165,44 @@ margin:auto;
 }
 
 .service-card{
-background:#fff;
+background:#1c1e23;
 padding:35px;
 border-radius:20px;
-border:1px solid rgba(0,0,0,.05);
-box-shadow:0 12px 28px rgba(0,0,0,.05);
+border:1px solid rgba(255,255,255,.08);
+box-shadow:0 12px 28px rgba(0,0,0,.9);
 transition:.4s;
 }
-.service-card:hover{transform:translateY(-8px); border-color:#d6b56d;}
+.service-card:hover{transform:translateY(-8px);}
 .service-card h3{color:#d6b56d;margin:0 0 10px;}
-.service-card p{font-size:15px;color:#666;}
+.service-card p{font-size:15px;color:#ccc;}
 
-/* MANUAL PROJECT SLIDER */
-.slider-container{
+/* PROJECT SLIDER */
+.slider{
 max-width:1100px;
 margin:auto;
-display:flex;
-gap:20px;
-overflow-x: auto;
-padding: 20px 0;
-scroll-snap-type: x mandatory;
-scrollbar-width: none;
-}
-.slider-container::-webkit-scrollbar { display: none; }
-
-.slider-container img{
-min-width: 100%;
-height:500px;
-object-fit:cover;
+overflow:hidden;
 border-radius:26px;
-box-shadow:0 10px 30px rgba(0,0,0,.1);
-scroll-snap-align: center;
-cursor: pointer;
+box-shadow:0 20px 60px rgba(0,0,0,.9);
 }
 
-/* LIGHTBOX FOR ZOOM */
-#lightbox {
-display: none;
-position: fixed;
-z-index: 9999;
-top: 0; left: 0; width: 100%; height: 100%;
-background: rgba(0,0,0,0.9);
-justify-content: center;
-align-items: center;
+.slider-track{
+display:flex;
+animation:slide 18s infinite linear;
 }
-#lightbox img { max-width: 90%; max-height: 85%; border-radius: 10px; }
-.close-btn { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; }
+
+.slider-track img{
+width:100%;
+min-width:100%;
+height:420px;
+object-fit:cover;
+}
+
+@keyframes slide{
+0%{transform:translateX(0);}
+33%{transform:translateX(-100%);}
+66%{transform:translateX(-200%);}
+100%{transform:translateX(0);}
+}
 
 /* TESTIMONIALS */
 .testimonials{
@@ -221,33 +213,33 @@ max-width:1000px;
 margin:auto;
 }
 .testimonial{
-background:#fff;
+background:#1c1e23;
 padding:35px;
 border-radius:20px;
-border:1px solid rgba(0,0,0,.05);
-box-shadow:0 12px 28px rgba(0,0,0,.05);
+border:1px solid rgba(255,255,255,.08);
+box-shadow:0 12px 28px rgba(0,0,0,.9);
 font-size:16px;
-color:#444;
+color:#ddd;
 }
 
 /* CONTACT */
 .contact{
-background:#fff;
+background:linear-gradient(135deg,#0c0e12,#16181e);
 border-radius:26px;
 padding:70px;
 max-width:1000px;
 margin:auto;
-box-shadow:0 20px 60px rgba(0,0,0,.05);
-border:1px solid rgba(0,0,0,.05);
+box-shadow:0 20px 60px rgba(0,0,0,.9);
+border:1px solid rgba(255,255,255,.06);
 }
 
 form input,form textarea,form select{
 width:100%;
 padding:16px;
 border-radius:14px;
-border:1px solid #ddd;
-background:#fdfdfd;
-color:#333;
+border:1px solid rgba(255,255,255,.08);
+background:#111218;
+color:#f5f5f5;
 margin-bottom:20px;
 }
 
@@ -261,19 +253,19 @@ border:none;
 border-radius:30px;
 font-weight:900;
 font-size:16px;
-box-shadow:0 12px 30px rgba(0,0,0,.15);
+box-shadow:0 12px 30px rgba(0,0,0,.8);
 cursor:pointer;
 }
 
 .qr-box{text-align:center;margin-top:40px;}
-.qr-box img{width:180px;border-radius:14px;box-shadow:0 10px 25px rgba(0,0,0,.05);}
+.qr-box img{width:180px;border-radius:14px;box-shadow:0 10px 25px rgba(0,0,0,.9);}
 
 /* MAP */
 .map-box{
 margin-top:40px;
 border-radius:20px;
 overflow:hidden;
-box-shadow:0 12px 28px rgba(0,0,0,.1);
+box-shadow:0 12px 28px rgba(0,0,0,.9);
 }
 
 /* THANK YOU */
@@ -281,24 +273,24 @@ box-shadow:0 12px 28px rgba(0,0,0,.1);
 display:none;
 position:fixed;
 inset:0;
-background:rgba(255,255,255,.95);
+background:rgba(0,0,0,.92);
 z-index:5000;
-color:#111;
+color:#fff;
 text-align:center;
 }
 
 #thankyou .box{
 max-width:650px;
 margin:10% auto;
-background:#fff;
+background:#1c1e23;
 padding:70px;
 border-radius:26px;
-box-shadow:0 25px 60px rgba(0,0,0,.1);
-border:1px solid #ddd;
+box-shadow:0 25px 60px rgba(0,0,0,.9);
+border:1px solid rgba(255,255,255,.08);
 }
 
 #thankyou h1{color:#d6b56d;font-size:32px;}
-#thankyou p{font-size:20px;color:#444;}
+#thankyou p{font-size:20px;color:#ccc;}
 
 /* FLOATING WHATSAPP */
 .whatsapp-float{
@@ -311,7 +303,7 @@ padding:14px 20px;
 border-radius:30px;
 text-decoration:none;
 font-weight:700;
-box-shadow:0 10px 25px rgba(0,0,0,.2);
+box-shadow:0 10px 25px rgba(0,0,0,.9);
 }
 </style>
 </head>
@@ -368,7 +360,7 @@ MANAGING HEAD AND MAIN INTERIOR DESIGNER – UMANG VANI
 </div>
 </section>
 
-<section id="services" style="background:#f9f9f9;">
+<section id="services">
 <h2>Our Services</h2>
 <div class="services">
 <div class="service-card"><h3>Full Home Interior</h3><p>Complete interior solutions for your dream home.</p></div>
@@ -384,20 +376,16 @@ MANAGING HEAD AND MAIN INTERIOR DESIGNER – UMANG VANI
 
 <section id="projects">
 <h2>Our Projects</h2>
-<p>(Scroll horizontally to view more projects. Click to enlarge.)</p>
-<div class="slider-container">
-<img src="https://picsum.photos/1200/600?random=1" onclick="zoomImg(this)">
-<img src="https://picsum.photos/1200/600?random=2" onclick="zoomImg(this)">
-<img src="https://picsum.photos/1200/600?random=3" onclick="zoomImg(this)">
+<div class="slider">
+<div class="slider-track">
+<img src="https://picsum.photos/1200/600?random=1">
+<img src="https://picsum.photos/1200/600?random=2">
+<img src="https://picsum.photos/1200/600?random=3">
+</div>
 </div>
 </section>
 
-<div id="lightbox">
-    <span class="close-btn" onclick="closeZoom()">&times;</span>
-    <img id="zoomTarget">
-</div>
-
-<section id="testimonials" style="background:#f9f9f9;">
+<section id="testimonials">
 <h2>Client Testimonials</h2>
 <div class="testimonials">
 <div class="testimonial">⭐⭐⭐⭐⭐<br>"Outstanding work quality and on-time delivery." – Rahul Sharma</div>
@@ -447,8 +435,8 @@ width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
 </div>
 </section>
 
-<footer style="padding:40px; background:#111; color:#fff;">
-©️ 2026 Shrishiv Interior Designs. All rights reserved.
+<footer>
+© 2026 Shrishiv Interior Designs. All rights reserved.
 </footer>
 
 <a class="whatsapp-float" href="https://wa.me/7415914573" target="_blank">WhatsApp</a>
@@ -457,20 +445,10 @@ width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
 <div class="box">
 <h1>THANK YOU FOR CHOOSING<br>SHRISHIV INTERIOR DESIGNS</h1>
 <p>SHRISHIV INTERIOR DESIGNERS WILL CONTACT YOU SOON</p>
-<button onclick="document.getElementById('thankyou').style.display='none'" style="margin-top:20px; padding:10px 20px; cursor:pointer; border-radius:20px; border:1px solid #ddd;">Close</button>
 </div>
 </div>
 
 <script>
-// Zoom Logic
-function zoomImg(el) {
-    document.getElementById("zoomTarget").src = el.src;
-    document.getElementById("lightbox").style.display = "flex";
-}
-function closeZoom() {
-    document.getElementById("lightbox").style.display = "none";
-}
-
 const form=document.getElementById("enquiryForm");
 const thankyou=document.getElementById("thankyou");
 
