@@ -176,7 +176,7 @@ transition:.4s;
 .service-card h3{color:#d6b56d;margin:0 0 10px;}
 .service-card p{font-size:15px;color:#ccc;}
 
-/* PROJECT SLIDER */
+/* PROJECT SLIDER - Configured for 5 photos */
 .slider{
 max-width:1100px;
 margin:auto;
@@ -187,21 +187,28 @@ box-shadow:0 20px 60px rgba(0,0,0,.9);
 
 .slider-track{
 display:flex;
-animation:slide 18s infinite linear;
+width: 500%; 
+animation:slide 25s infinite linear;
 }
 
 .slider-track img{
-width:100%;
-min-width:100%;
+width:20%; 
 height:420px;
 object-fit:cover;
 }
 
 @keyframes slide{
-0%{transform:translateX(0);}
-33%{transform:translateX(-100%);}
-66%{transform:translateX(-200%);}
-100%{transform:translateX(0);}
+0% { transform: translateX(0); }
+15% { transform: translateX(0); }
+20% { transform: translateX(-20%); }
+35% { transform: translateX(-20%); }
+40% { transform: translateX(-40%); }
+55% { transform: translateX(-40%); }
+60% { transform: translateX(-60%); }
+75% { transform: translateX(-60%); }
+80% { transform: translateX(-80%); }
+95% { transform: translateX(-80%); }
+100% { transform: translateX(0); }
 }
 
 /* TESTIMONIALS */
@@ -312,7 +319,7 @@ box-shadow:0 10px 25px rgba(0,0,0,.9);
 
 <header>
 <div class="logo-box">
-<img src="shrishiv-website/logo.png">
+<img src="assets/images/logo.png">
 <h1>Shrishiv Interior Designs</h1>
 </div>
 <nav>
@@ -378,9 +385,11 @@ MANAGING HEAD AND MAIN INTERIOR DESIGNER – UMANG VANI
 <h2>Our Projects</h2>
 <div class="slider">
 <div class="slider-track">
-<img src="https://picsum.photos/1200/600?random=1">
-<img src="https://picsum.photos/1200/600?random=2">
-<img src="https://picsum.photos/1200/600?random=3">
+<img src="assets/images/PHOTO1.png">
+<img src="assets/images/PHOTO2.png">
+<img src="assets/images/PHOTO3.png">
+<img src="assets/images/PHOTO4.png">
+<img src="assets/images/PHOTO5.png">
 </div>
 </div>
 </section>
@@ -421,13 +430,13 @@ MANAGING HEAD AND MAIN INTERIOR DESIGNER – UMANG VANI
 </form>
 
 <div class="qr-box">
-<img src="shrishiv-website/QR.png">
+<img src="assets/images/QR.png">
 <p>Scan to visit our Instagram</p>
 </div>
 
 <div class="map-box">
 <iframe 
-src="https://www.google.com/maps?q=Indore,India&output=embed"
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1!2d0!3d0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAwJzAwLjAiTiA3N8KwMDAnMDAuMCJF!5e0!3m2!1sen!2sin!4v1"
 width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
 </iframe>
 </div>
@@ -436,7 +445,7 @@ width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
 </section>
 
 <footer>
-© 2026 Shrishiv Interior Designs. All rights reserved.
+©️ 2026 Shrishiv Interior Designs. All rights reserved.
 </footer>
 
 <a class="whatsapp-float" href="https://wa.me/7415914573" target="_blank">WhatsApp</a>
